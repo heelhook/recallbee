@@ -1,0 +1,111 @@
+doctype html
+html[lang="en"]
+  head
+    meta[charset="utf-8"]
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+    meta[name="description" content=""]
+    meta[name="author" content=""]
+    title RecallBee — Free alerts when your kids toys' become safety hazards
+    = stylesheet_link_tag    'landing', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'landing', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    link[rel="shortcut icon" href="images/ico/favicon.ico"]
+    link[rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png"]
+    link[rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png"]
+    link[rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png"]
+    link[rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png"]
+  body
+    header#header
+      = render partial: 'shared/landing/social'
+      .navbar.navbar-inverse[role="banner"]
+        .container
+          .navbar-header
+            button.navbar-toggle[type="button" data-toggle="collapse" data-target=".navbar-collapse"]
+              span.sr-only
+                | Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            a.navbar-brand[href="index.html"]
+
+            h1
+              img[src="/assets/triangle/logo.png" alt="logo"]
+          .collapse.navbar-collapse
+            = render partial: 'shared/landing/navigation'
+    
+    = yield
+
+    footer#footer
+      .container
+        .row
+          .col-sm-12.text-center.bottom-separator
+            img.img-responsive.inline[src="/assets/triangle/home/under.png" alt=""]
+          .col-md-4.col-sm-6
+            .testimonial.bottom
+              h2
+                | Testimonial
+              .media
+                .pull-left
+                  a[href="#"]
+                    img[src="/assets/triangle/home/profile1.png" alt=""]
+                .media-body
+                  blockquote
+                    | Nisi commodo bresaola, leberkas venison eiusmod bacon occaecat labore tail.
+                  h3
+                    a[href="#"]
+                      | - Jhon Kalis
+              .media
+                .pull-left
+                  a[href="#"]
+                    img[src="/assets/triangle/home/profile2.png" alt=""]
+                .media-body
+                  blockquote
+                    | Capicola nisi flank sed minim sunt aliqua rump pancetta leberkas venison eiusmod.
+                  h3
+                    a[href=""]
+                      | - Abraham Josef
+          .col-md-3.col-sm-6
+            .contact-info.bottom
+              h2
+                | Contacts
+              address
+                |  E-mail: 
+                a[href="mailto:someone@example.com"]
+                  | email@email.com
+                br
+                |  Phone: +1 (123) 456 7890 
+                br
+                |  Fax: +1 (123) 456 7891 
+                br
+              h2
+                | Address
+              address
+                |  Unit C2, St.Vincent's Trading Est., 
+                br
+                |  Feeder Road, 
+                br
+                |  Bristol, BS2 0UY 
+                br
+                |  United Kingdom 
+                br
+          .col-md-4.col-sm-12
+            .contact-form.bottom
+              h2
+                | Send a message
+              form#main-contact-form[name="contact-form" method="post" action="sendemail.php"]
+                .form-group
+                  input.form-control[type="text" name="name" required="required" placeholder="Name"]
+                .form-group
+                  input.form-control[type="email" name="email" required="required" placeholder="Email Id"]
+                .form-group
+                  textarea#message.form-control[name="message" required="required" rows="8" placeholder="Your text here"]
+                .form-group
+                  input.btn.btn-submit[type="submit" name="submit" value="Submit"]
+          .col-sm-12
+            .copyright-text.text-center
+              p
+                | © Your Company 2014. All Rights Reserved.
+              p
+                | Designed by 
+                a[target="_blank" href="http://www.themeum.com"]
+                  | Themeum
