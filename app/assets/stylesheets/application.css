@@ -15,5 +15,8 @@
  *= require animate
  *= require triangle/main
  *= require triangle/responsive
+ *= require bootstrap-social
  *= require_self
  */
+
+a.btn-social { margin-right: 10px; }

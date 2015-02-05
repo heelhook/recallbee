@@ -5,9 +5,14 @@ section#home-slider
         .slide-text
           h1= @header_ab_test
           p
-            | Boudin doner frankfurter pig. Cow shank bresaola pork loin tri-tip tongue venison pork belly meatloaf short loin landjaeger biltong beef ribs shankle chicken andouille.
-          a.btn.btn-common[href="#"]
-            | SIGN UP
+            | We track all your kids' toys and notify you immediately when they have safety issues.
+
+          - if current_user
+            a.btn.btn-highlight.btn-common[href="#"] OPEN YOUR DASHBOARD
+          - else
+            a.btn.btn-highlight.btn-common[href=new_user_registration_path] START TRACKING TOYS FOR FREE
+          a.btn.btn-common[href="#"] Learn more
+
         img.slider-hill[src="/assets/triangle/home/slider/hill.png" alt="slider image"]
         img.slider-house[src="/assets/triangle/home/slider/house.png" alt="slider image"]
         img.slider-sun[src="/assets/triangle/home/slider/sun.png" alt="slider image"]
@@ -21,27 +26,27 @@ section#services
       .col-sm-4.text-center.padding.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="300ms"]
         .single-service
           .wow.scaleIn[data-wow-duration="500ms" data-wow-delay="300ms"]
-            img[src="/assets/triangle/home/icon1.png" alt=""]
+            img[src="/assets/triangle/services/1.png" alt=""]
           h2
-            | Incredibly Responsive
+            | It all starts with you...
           p
-            | Ground round tenderloin flank shank ribeye. Hamkevin meatball swine. Cow shankle beef sirloin chicken ground round.
+            | You tell us about the perfect new toy you just got for your child.
       .col-sm-4.text-center.padding.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="600ms"]
         .single-service
           .wow.scaleIn[data-wow-duration="500ms" data-wow-delay="600ms"]
-            img[src="/assets/triangle/home/icon2.png" alt=""]
+            img[src="/assets/triangle/home/icon1.png" alt=""]
           h2
-            | Superior Typography
+            | ... we constantly monitor toys...
           p
-            | Hamburger ribeye drumstick turkey, strip steak sausage ground round shank pastrami beef brisket pancetta venison.
+            | We go through millions of reports of toy recalls, safety warnings and stories of problematic toys.
       .col-sm-4.text-center.padding.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="900ms"]
         .single-service
           .wow.scaleIn[data-wow-duration="500ms" data-wow-delay="900ms"]
-            img[src="/assets/triangle/home/icon3.png" alt=""]
+            img[src="/assets/triangle/home/cycle.png" alt=""]
           h2
-            | Swift Page Builder
+            | ... you get immediate alerts
           p
-            | Venison tongue, salami corned beef ball tip meatloaf bacon. Fatback pork belly bresaola tenderloin bone pork kevin shankle.
+            | When a safety issue is raised on one of your kid toys we send you immediate alerts to make sure you are in the known.
 section#action.responsive
   .vertical-center
     .container
@@ -49,13 +54,12 @@ section#action.responsive
         .action.take-tour
           .col-sm-7.wow.fadeInLeft[data-wow-duration="500ms" data-wow-delay="300ms"]
             h1.title
-              | Triangle Corporate Template
+              | We track toys and make sure they are safe
             p
-              | A responsive, retina-ready & wide multipurpose template.
+              | Did you know that in 2013 alone one toy was recalled every three days?
           .col-sm-5.text-center.wow.fadeInRight[data-wow-duration="500ms" data-wow-delay="300ms"]
             .tour-button
-              a.btn.btn-common[href="#"]
-                | TAKE THE TOUR
+              a.btn.btn-highlight.btn-common[href=new_user_registration_path] Start Now, It's Free!
 section#features
   .container
     .row
@@ -63,26 +67,22 @@ section#features
         .col-sm-5.wow.fadeInLeft[data-wow-duration="500ms" data-wow-delay="300ms"]
           img.img-responsive[src="/assets/triangle/home/image1.png" alt=""]
         .col-sm-6.wow.fadeInRight[data-wow-duration="500ms" data-wow-delay="300ms"]
-          h2
-            | Experienced and Enthusiastic
+          h2 Catch unsafe toys easily
           p
-            | Pork belly leberkas cow short ribs capicola pork loin. Doner fatback frankfurter jerky meatball pastrami bacon tail sausage. Turkey fatback ball tip, tri-tip tenderloin drumstick salami strip steak.
+            | Getting rid of unsafe toys is ridiculously easy now, we'll tell you exactly what toy can be a hazard for your kids.
       .single-features
         .col-sm-6.col-sm-offset-1.align-right.wow.fadeInLeft[data-wow-duration="500ms" data-wow-delay="300ms"]
           h2
-            | Built for the Responsive Web
+            | No credit card required! Instant protection!
           p
-            | Mollit eiusmod id chuck turducken laboris meatloaf pork loin tenderloin swine. Pancetta excepteur fugiat strip steak tri-tip. Swine salami eiusmod sint, ex id venison non. Fugiat ea jowl cillum meatloaf.
+            | We don't believe in artificial pay-walls, we believe in getting you the most reliable protection from hazardous toys as fast as possible.
+          p
+            a.btn.btn-common[href=new_user_registration_path] Get Started Now
         .col-sm-5.wow.fadeInRight[data-wow-duration="500ms" data-wow-delay="300ms"]
-          img.img-responsive[src="/assets/triangle/home/image2.png" alt=""]
-      .single-features
-        .col-sm-5.wow.fadeInLeft[data-wow-duration="500ms" data-wow-delay="300ms"]
           img.img-responsive[src="/assets/triangle/home/image3.png" alt=""]
-        .col-sm-6.wow.fadeInRight[data-wow-duration="500ms" data-wow-delay="300ms"]
-          h2
-            | Experienced and Enthusiastic
-          p
-            | Ut officia cupidatat anim excepteur fugiat cillum ea occaecat rump pork chop tempor. Ut tenderloin veniam commodo. Shankle aliquip short ribs, chicken eiusmod exercitation shank landjaeger spare ribs corned beef.
+
+= render partial: 'shared/landing/stats'
+
 section#clients
   .container
     .row
@@ -91,27 +91,30 @@ section#clients
           p
             img.img-responsive[src="/assets/triangle/home/clients.png" alt=""]
           h1.title
-            | Happy Clients
+            | Happy Parents, Safe Kids
           p
-            | Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            br
-            |  Ut enim ad minim veniam, quis nostrud 
-        .clients-logo.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="600ms"]
-          .col-xs-3.col-sm-2
-            a[href="#"]
-              img.img-responsive[src="/assets/triangle/home/client1.png" alt=""]
-          .col-xs-3.col-sm-2
-            a[href="#"]
-              img.img-responsive[src="/assets/triangle/home/client2.png" alt=""]
-          .col-xs-3.col-sm-2
-            a[href="#"]
-              img.img-responsive[src="/assets/triangle/home/client3.png" alt=""]
-          .col-xs-3.col-sm-2
-            a[href="#"]
-              img.img-responsive[src="/assets/triangle/home/client4.png" alt=""]
-          .col-xs-3.col-sm-2
-            a[href="#"]
-              img.img-responsive[src="/assets/triangle/home/client5.png" alt=""]
-          .col-xs-3.col-sm-2
-            a[href="#"]
-              img.img-responsive[src="/assets/triangle/home/client6.png" alt=""]
+            | Our goal is to make sure our kids are safe.
+
+section#action.responsive
+  .vertical-center
+    .container
+      .row
+        .action.take-tour
+          .col-sm-8.wow.fadeInLeft[data-wow-duration="500ms" data-wow-delay="300ms"]
+            h1.title
+              | We run a low-traffic newsletter on kids' safety; subscribe to receive high-quality safety tips.
+            p
+              | We hate spam too! We only send valuable news and tips.
+          .col-md-4.text-center
+            form[action="http://linkedin.us9.list-manage.com/subscribe/post?u=565ed18634426e342ea4b57e5&id=986c8b4b57" method="post" target="_blank"]
+              .row
+                .col-md-4
+                  input.form-control[type="text" name="FNAME" placeholder="First Name"]
+                .col-md-4
+                  input.col-md-4.form-control[type="text" name="LNAME" placeholder="Last Name"]
+              .row
+                .col-md-8
+                  input.form-control[type="email" name="EMAIL" placeholder="Email"]
+              .row
+                .col-md-8
+                  button.btn.btn-submit[type="submit"] Stay informed!

@@ -1,86 +1,10 @@
+- unless current_user
+  .nav= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-highlight btn-common'
+
 ul.nav.navbar-nav.navbar-right
-  li.active
-    = link_to 'Home', root_path
-  li.dropdown
-    a[href="#"]
-      | Pages 
-      i.fa.fa-angle-down
-    ul.sub-menu[role="menu"]
-      li
-        a[href="aboutus.html"]
-          | About
-      li
-        a[href="aboutus2.html"]
-          | About 2
-      li
-        a[href="service.html"]
-          | Services
-      li
-        a[href="pricing.html"]
-          | Pricing
-      li
-        a[href="contact.html"]
-          | Contact us
-      li
-        a[href="contact2.html"]
-          | Contact us 2
-      li
-        a[href="404.html"]
-          | 404 error
-      li
-        a[href="coming-soon.html"]
-          | Coming Soon
-  li.dropdown
-    a[href=blog_index_path]
-      | Blog 
-      i.fa.fa-angle-down
-    ul.sub-menu[role="menu"]
-      li
-        a[href="blog.html"]
-          | Blog Default
-      li
-        a[href="blogtwo.html"]
-          | Timeline Blog
-      li
-        a[href="blogone.html"]
-          | 2 Columns + Right Sidebar
-      li
-        a[href="blogthree.html"]
-          | 1 Column + Left Sidebar
-      li
-        a[href="blogfour.html"]
-          | Blog Masonary
-      li
-        a[href="blogdetails.html"]
-          | Blog Details
-  li.dropdown
-    a[href="portfolio.html"]
-      | Portfolio 
-      i.fa.fa-angle-down
-    ul.sub-menu[role="menu"]
-      li
-        a[href="portfolio.html"]
-          | Portfolio Default
-      li
-        a[href="portfoliofour.html"]
-          | Isotope 3 Columns + Right Sidebar
-      li
-        a[href="portfolioone.html"]
-          | 3 Columns + Right Sidebar
-      li
-        a[href="portfoliotwo.html"]
-          | 3 Columns + Left Sidebar
-      li
-        a[href="portfoliothree.html"]
-          | 2 Columns
-      li
-        a[href="portfolio-details.html"]
-          | Portfolio Details
-  li
-    a[href="shortcodes.html "]
-      | Shortcodes
-.search
-  form[role="form"]
-    i.fa.fa-search
-    .field-toggle
-      input.search-form[type="text" autocomplete="off" placeholder="Search"]
+  = active_link_to 'Home', '/'
+  = active_link_to 'How It Works', how_it_works_path
+  = active_link_to 'Blog', blog_index_path
+  = active_link_to 'About', '/about'
+  - if current_user
+    = active_link_to 'Dashboard', '/dashboard'

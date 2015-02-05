@@ -1,0 +1,28 @@
+section
+  .container
+    .row
+      .col-sm-12.text-center.padding.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="300ms"]
+        h1.strong
+          | You are joining #{@customers} responsible parents
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          = devise_error_messages!
+          .field
+            = f.label :email
+            br
+            = f.email_field :email, autofocus: true
+          .field
+            = f.label :password
+            - if @validatable
+              em
+                | (
+                = @minimum_password_length
+                |  characters minimum)
+            br
+            = f.password_field :password, autocomplete: "off"
+          .field
+            = f.label :password_confirmation
+            br
+            = f.password_field :password_confirmation, autocomplete: "off"
+          .actions
+            = f.submit "Sign up"
+        = render "devise/shared/links"

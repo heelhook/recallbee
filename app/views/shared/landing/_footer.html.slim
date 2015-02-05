@@ -1,0 +1,39 @@
+.container
+  .row
+    .col-sm-12.text-center.bottom-separator
+      img.img-responsive.inline[src="/assets/triangle/home/under.png" alt=""]
+    .col-md-3.col-sm-6
+    .col-md-3.col-sm-6
+      .contact-info.bottom
+        h2
+          | Social Networks
+        a.twitter-follow-button[href="https://twitter.com/RecallBee" data-show-count="false" data-size="large" data-dnt="true"]
+          | Follow @RecallBee
+        script
+          | !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+        a.btn.btn-social.btn-facebook[href="http://www.facebook.com/RecallBeeApp"]
+          i.fa.fa-facebook
+          | RecallBee on Facebook
+
+        #fb-root
+        script
+          | (function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1603868103162053&version=v2.0"; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));
+        .fb-like[data-href="http://www.recallbee.com/" data-width="250" data-layout="button" data-action="like" data-show-faces="true" data-share="true"]
+    .col-md-5.col-sm-12
+      .contact-form.bottom
+        h2 Subscribe to our high-value newsletter
+        form[action="http://linkedin.us9.list-manage.com/subscribe/post?u=565ed18634426e342ea4b57e5&id=986c8b4b57" method="post" target="_blank"]
+          .row
+            .col-md-5
+              input.form-control[type="text" name="FNAME" placeholder="First Name"]
+            .col-md-5
+              input.col-md-4.form-control[type="text" name="LNAME" placeholder="Last Name"]
+          .row
+            .col-md-10
+              input.form-control[type="email" name="EMAIL" placeholder="Email"]
+          .row
+            .col-md-10
+              button.btn.btn-submit[type="submit"] Get practical safety tips!
+    .col-sm-12
+      .copyright-text.text-center
+        p © RecallBee #{Date.today.year}. All Rights Reserved.

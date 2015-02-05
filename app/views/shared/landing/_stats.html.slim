@@ -1,0 +1,25 @@
+section#action
+  .vertical-center
+    .container
+      .row
+        .action.count
+          .col-sm-3.text-center.wow.bounceIn.animated[data-wow-duration="1000ms" data-wow-delay="300ms" style="visibility: visible; -webkit-animation-duration: 1000ms; -webkit-animation-delay: 300ms;"]
+            h1.timer.bold[data-to="7000" data-speed="3000" data-from="0"]
+              = number_with_delimiter @days_since_starting_operations
+            h3
+              | Days Monitoring Toys
+          .col-sm-3.text-center.wow.bounceIn.animated[data-wow-duration="1000ms" data-wow-delay="300ms" style="visibility: visible; -webkit-animation-duration: 1000ms; -webkit-animation-delay: 300ms;"]
+            h1.timer.bold[data-to="12" data-speed="3000" data-from="0"]
+              = number_with_delimiter @alerts_sent
+            h3
+              | Alerts Sent
+          .col-sm-3.text-center.wow.bounceIn.animated[data-wow-duration="1000ms" data-wow-delay="300ms" style="visibility: visible; -webkit-animation-duration: 1000ms; -webkit-animation-delay: 300ms;"]
+            h1.timer.bold[data-to="432" data-speed="3000" data-from="0"]
+              = number_with_delimiter @toys_monitored
+            h3
+              | Toys Being Monitored
+          .col-sm-3.text-center.wow.bounceIn.animated[data-wow-duration="1000ms" data-wow-delay="300ms" style="visibility: visible; -webkit-animation-duration: 1000ms; -webkit-animation-delay: 300ms;"]
+            h1.timer.bold[data-to="145" data-speed="3000" data-from="0"]
+              = number_with_delimiter @customers
+            h3
+              | Parents We Are Helping

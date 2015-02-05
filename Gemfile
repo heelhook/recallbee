@@ -32,12 +32,15 @@ gem 'animate-rails'
 
 gem 'slim-rails'
 
+gem 'active_link_to'
+
 gem 'split', require: 'split/dashboard'
 
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+gem 'domp'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

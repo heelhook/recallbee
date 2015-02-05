@@ -16,24 +16,6 @@ html[lang="en"]
     link[rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png"]
   body
     header#header
-      = render partial: 'shared/landing/social'
-      .navbar.navbar-inverse[role="banner"]
-        .container
-          .navbar-header
-            button.navbar-toggle[type="button" data-toggle="collapse" data-target=".navbar-collapse"]
-              span.sr-only
-                | Toggle navigation
-              span.icon-bar
-              span.icon-bar
-              span.icon-bar
-            a.navbar-brand[href="index.html"]
-
-            h1
-              img[src="/assets/triangle/logo.png" alt="logo"]
-          .collapse.navbar-collapse
-            = render partial: 'shared/landing/navigation'
+      = render partial: 'shared/devise/header'
     
     = yield
-
-    footer#footer
-      = render partial: 'shared/landing/footer'

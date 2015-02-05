@@ -3,3 +3,30 @@
  */
 
 #home-slider .slide-text { width: 600px; }
+
+div.nav {
+  float: right;
+  line-height: 60px;
+}
+
+.btn { margin-right: 5px; }
+
+.btn-highlight {
+  background-color: #4fcccd;
+  color: #fff;
+  border-radius: 3px;
+}
+
+h1.strong {
+  font-weight: bold;
+  color: black;
+}
+
+form .col-md-4, form .col-md-8, form .col-md-5, form .col-md-10 {
+  padding-left: 5px;
+  padding-right: 2px;
+}
+
+form .row {
+  padding-bottom: 5px;
+}
