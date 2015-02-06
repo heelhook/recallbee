@@ -1,28 +1,44 @@
 section
   .container
     .row
-      .col-sm-12.text-center.padding.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="300ms"]
-        h1.strong
-          | You are joining #{@customers} responsible parents
-        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-          = devise_error_messages!
-          .field
-            = f.label :email
-            br
-            = f.email_field :email, autofocus: true
-          .field
-            = f.label :password
-            - if @validatable
-              em
-                | (
-                = @minimum_password_length
-                |  characters minimum)
-            br
-            = f.password_field :password, autocomplete: "off"
-          .field
-            = f.label :password_confirmation
-            br
-            = f.password_field :password_confirmation, autocomplete: "off"
-          .actions
-            = f.submit "Sign up"
-        = render "devise/shared/links"
+      .col-sm-12.text-center.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="300ms"]
+        h1.strong You are on your way to join #{@customers} responsible parents!
+    .row.padding
+      .col-md-6.col-md-offset-1
+        ul
+          li.fa.fa-caret-right
+            b Free. Forever. Yeah, really!
+          li.fa.fa-caret-right No credit card required. Just fill out the form below and you’re in!
+          li.fa.fa-caret-right Always ready to track new toys; just a quick tweet away!
+
+        .text-right= image_tag 'signup_form.png'
+      .col-md-5
+        .form
+          h2.text-center Quick Social Sign Up
+          - resource_class.omniauth_providers.each do |provider|
+            .row
+              p.col-md-12.text-center
+                a.btn.btn-social[class="btn-#{provider.to_s}" href= omniauth_authorize_path(resource_name, provider)]
+                  i.fa[class="fa-#{provider.to_s}"]
+                  = "Sign in with #{provider.to_s.titleize}"
+
+          .row
+            .col-md-12.text-center
+              a.btn.btn-common.btn-green.btn-lg#show_form[href='#'] Or use the standard signup form
+          #form.hidden
+            h2.text-center - or -
+            = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+              .row
+                .col-md-6
+                  = f.text_field :first_name, autofocus: true, class: 'form-control', placeholder: 'First Name'
+                .col-md-6
+                  = f.text_field :last_name, class: 'form-control', placeholder: 'Last Name'
+              .row
+                .col-md-12
+                  = f.email_field :email, class: 'form-control', placeholder: 'Email'
+              .row
+                .col-md-12
+                  = f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password'
+              .row
+                .col-md-12
+                  = f.submit "Start monitoring toys", class: 'form-control btn btn-common btn-green'

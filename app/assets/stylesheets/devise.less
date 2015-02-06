@@ -1,0 +1,39 @@
+/*
+ *= require landing
+ */
+
+@import "twitter/bootstrap/mixins.less";
+
+/* Use special navigation bar on user registration */
+body.registrations.new, body.registrations.create {
+  img#logo { width: 60%; }
+
+  header#header {
+    padding: 0px;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    font-size: 1.4em;
+    line-height: 2em;
+  }
+
+  .form {
+    max-width: 380px;
+    margin: 0 auto 20px;
+    background-color: #fafafa;
+    border: 1px solid rgba(0,0,0,0.1);
+    .border-top-radius(3px);
+    .border-bottom-radius(3px);
+    padding: 20px 30px;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+  }
+
+  form .col-md-6, form .col-md-12 {
+    padding-left: 5px;
+    padding-right: 2px;
+  }
+}
