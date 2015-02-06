@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/amro/gibbon.git
+  revision: fb6593188493440e0243bf96096d9cd754b9f0c1
+  specs:
+    gibbon (1.1.4)
+      httparty
+      multi_json (>= 1.9.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -80,6 +88,9 @@ GEM
       activesupport (>= 4.1.0)
     hashie (3.3.2)
     hike (1.2.3)
+    httparty (0.13.3)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.7.0)
     jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
@@ -246,6 +257,7 @@ DEPENDENCIES
   domp
   font-awesome-rails
   friendly_id (~> 5.1.0)
+  gibbon!
   jbuilder (~> 2.0)
   jquery-rails
   less-rails-bootstrap
