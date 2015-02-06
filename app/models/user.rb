@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :children
+  has_many :toys, through: :children
+  
   def self.create_from_omniauth(params)
     attributes = {
       email: params['info']['email'],
