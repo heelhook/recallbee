@@ -1,8 +1,10 @@
 class User < ActiveRecord::Base
-  has_many :children
   include NewsletterSubscribable
+
+  has_many :children, foreign_key: :parent_id, dependent: :destroy
   has_many :toys, through: :children
   has_many :authentications, class_name: 'UserAuthentication', dependent: :destroy
+
   devise :omniauthable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :omniauthable
 
@@ -17,6 +19,4 @@ class User < ActiveRecord::Base
 
     create(attributes)
   end
-
-  private
 end

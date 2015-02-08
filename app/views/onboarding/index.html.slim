@@ -1,0 +1,68 @@
+#onboarding.unboxed
+  section
+    .container
+      .row.header
+        h1 Congratulations!
+        h3 You are on your way to have your kids' toys all tidied up
+        
+
+      .row
+        .col-md-12.tabs-wrapper#tabs
+          ul.nav.nav-tabs.unclickable
+            li.active
+              a[href="#kids" aria-controls="kids" role="tab" data-toggle="tab"]
+                | Talk about your kids!
+            li
+              a[href="#toys" aria-controls="toys" role="tab" data-toggle="tab"]
+                | What about their toys?
+            li
+              a[href="#magic" aria-controls="magic" role="tab" data-toggle="tab"]
+                | Magic!
+
+          .tab-content
+            #kids.tab-pane[role="tabpanel"]
+              = render partial: 'shared/add_child_form'
+              .row
+                .col-md-6
+                  a.button[href='#'] Add Another Child
+                .col-md-6
+                  a.button[href='#toys' data-toggle="tab"] Continue
+
+
+            #toys.tab-pane.fade.in.active[role="tabpanel"]
+              .row
+                .col-md-8.title
+                  h3 Wonderful! Now let's start tracking some toys
+
+                  p
+                    | We have made it as easy as possible to add toys to your collections.
+
+              .row.features
+
+
+              .row
+                .col-md-8.info
+                  h3 Always handy, right from your Twitter-enabled phone!
+
+              .row
+                .col-md-6.info
+                  h4 Just send us a tweet!
+
+                  p
+                    | Tell us about your children's new toy with a quick tweet and we will add it to their list!
+
+
+                .col-md-6.info
+                  h4 Give it a try! Add your first toy via Twitter:
+
+                  a.twitter-hashtag-button.button[href="https://twitter.com/intent/tweet?button_hashtag=newtoy&text=Hey%20%40RecallBee%2C%20Tim%20has%20a%20new%20Cool%20Sample%20Toy" data-size="large" data-related="RecallBee" target="_blank"]
+                    | Create sample tweet
+                    b  #newtoy
+                  br
+                    span.note Click the tweet button and see the magic happen!
+
+              .row
+                .col-md-6.info
+                .col-md-6.info
+                  a.button.button-small Test
+

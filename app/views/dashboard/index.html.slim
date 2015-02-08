@@ -1,0 +1,36 @@
+.boxed
+  section
+    .container
+      .row.header
+        .col-md-12
+          h3
+            | #{current_user.first_name}'s Kids' Toys Inventory
+      .row
+        .col-md-9.box
+          - if current_user.children.empty?
+            #welcome-box
+              = render partial: 'empty'
+          - else
+            #children-list
+              - current_user.children.each do |child|
+                h1 #{child.name}'s Toys
+
+        .col-md-3.sidebar
+          h4 Tools
+
+          ul
+            li
+              a[href='#' data-toggle="modal" data-target='#new-child'] Add My Child
+
+#new-child.modal.fade
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        h4.modal-title Add My Child
+
+      .modal-body
+        = render partial: 'shared/add_child_form'
+
+      .modal-footer
+        a.create.btn.btn-micro.btn-gray[href='#' data-dismiss="modal"] Cancel
+        a.create.btn.btn-micro[href='#' data-dismiss="modal" data-form="new_child" data-role="submit"] Done! Let's go!

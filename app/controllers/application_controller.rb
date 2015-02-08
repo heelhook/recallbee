@@ -8,8 +8,11 @@ class ApplicationController < ActionController::Base
   protected
 
   def default_layout
-    if devise_controller?
-      'devise'
+    case
+    when controller_name == 'registrations' && action_name == 'edit'; 'application'
+    when devise_controller?; 'devise'
+    else
+      'application'
     end
   end
 

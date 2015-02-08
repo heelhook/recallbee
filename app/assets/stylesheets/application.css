@@ -12,10 +12,8 @@
  *
  *= require twitter/bootstrap
  *= require font-awesome
- *= require animate
- *= require triangle/main
- *= require triangle/responsive
  *= require bootstrap-social
+ *= require react/theme
  *= require_self
  */
 

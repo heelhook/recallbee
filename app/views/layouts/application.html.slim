@@ -1,10 +1,26 @@
 doctype html
 html
   head
+    meta[charset="UTF-8"]
+    meta[http-equiv="X-UA-Compatible" content="IE=edge"]
     title
-      | Recallbee
+      | React - Bootstrap Theme
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'react/theme', 'data-turbolinks-track' => true
     = csrf_meta_tags
+    link[rel="stylesheet" type="text/css" href="css/vendor/brankic.css"]
+    link[rel="stylesheet" type="text/css" href="css/vendor/isotope.css"]
+    script[src="js/vendor/jquery.isotope.min.js"]
   body
+    header.navbar.navbar-inverse.normal[role="banner"]
+      .container
+        = render partial: 'shared/header'
+        nav.collapse.navbar-collapse.bs-navbar-collapse[role="navigation"]
+          = render partial: 'shared/navigation'
+
     = yield
+
+    #footer
+      = render partial: 'shared/footer'

@@ -1,0 +1,21 @@
+h1 Listing test_resources
+
+table
+  thead
+    tr
+      th Name
+      th
+      th
+      th
+
+  tbody
+    - @test_resources.each do |test_resource|
+      tr
+        td = test_resource.name
+        td = link_to 'Show', test_resource
+        td = link_to 'Edit', edit_test_resource_path(test_resource)
+        td = link_to 'Destroy', test_resource, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Test resource', new_test_resource_path

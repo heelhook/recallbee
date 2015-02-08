@@ -1,0 +1,12 @@
+= form_for @test_resource do |f|
+  - if @test_resource.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@test_resource.errors.count, "error")} prohibited this test_resource from being saved:"
+      ul
+        - @test_resource.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions = f.submit

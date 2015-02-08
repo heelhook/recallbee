@@ -1,0 +1,43 @@
+.row
+  .col-md-6.info
+    h4 First, tell us a little bit about your kids!
+
+    p
+      | (bragging allowed; we love knowing about the kids we help!)
+    
+    h4 What is this for?
+
+    p
+      | We use your children's names to help you locate a faulty toy
+      | when the moment's right, so that we are able to help you know
+      |  whose room to check.
+
+  .col-md-6
+    .form
+      = form_for @child, remote: true do |f|
+        .row
+          .col-md-6
+            .form-group
+              = f.text_field :name, class: 'form-control', autofocus: true, placeholder: "Your child's first name"
+
+        .row
+          .col-md-6
+            .form-group
+              input.form-control#bday[type="text" placeholder="Birthday MM/DD/YYYY"]
+              span.note
+                b *
+                |  This is an optional field
+
+          .col-md-6
+              span.note No, we won't remind you about their birthday!
+
+        .row
+          .col-md-6
+            .form-group
+              b Gender:
+              |  
+              input[type="radio" name="gender" value="Girl"]
+                label[for="gender"] Girl
+              input[type="radio" name="gender" value="Boy"]
+                label[for="gender"] Boy
+

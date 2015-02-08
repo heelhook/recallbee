@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'getting-started' => 'onboarding#index'
+  get 'dashboard' => 'dashboard#index'
+
+  resources :children, only: [:create]
+
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'registrations',
@@ -8,6 +13,7 @@ Rails.application.routes.draw do
       sign_in: 'login',
       sign_out: 'logout',
       sign_up: 'start',
+      edit: 'account',
     }
 
   mount Split::Dashboard, :at => 'split'

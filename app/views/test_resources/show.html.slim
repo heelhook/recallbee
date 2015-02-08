@@ -1,0 +1,9 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @test_resource.name
+
+= link_to 'Edit', edit_test_resource_path(@test_resource)
+'|
+= link_to 'Back', test_resources_path
