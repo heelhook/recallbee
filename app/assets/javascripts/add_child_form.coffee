@@ -4,6 +4,3 @@ $ ->
 
 
   $('#new-child.modal form').on 'ajax:send', (e) -> e.target.reset()
-
-  $('#new-child.modal form').on 'ajax:success', (e, child) ->
-    

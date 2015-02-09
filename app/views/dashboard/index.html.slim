@@ -7,13 +7,12 @@
             | #{current_user.first_name}'s Kids' Toys Inventory
       .row
         .col-md-9.box
-          - if current_user.children.empty?
-            #welcome-box
-              = render partial: 'empty'
-          - else
-            #children-list
-              - current_user.children.each do |child|
-                h1 #{child.name}'s Toys
+          #welcome-box[class=(current_user.children.any? ? 'hidden' : '')]
+            = render partial: 'empty'
+          #children-list
+            - current_user.children.each do |child|
+            = sync partial: 'dashboard_item', collection: current_user.children
+            = sync_new partial: 'dashboard_item', resource: Child.new, scope: Child.by_parent(current_user)
 
         .col-md-3.sidebar
           h4 Tools

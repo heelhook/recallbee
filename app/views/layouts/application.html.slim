@@ -9,6 +9,7 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = javascript_include_tag 'react/theme', 'data-turbolinks-track' => true
+    = javascript_include_tag Sync.adapter_javascript_url
     = csrf_meta_tags
     link[rel="stylesheet" type="text/css" href="css/vendor/brankic.css"]
     link[rel="stylesheet" type="text/css" href="css/vendor/isotope.css"]

@@ -4,6 +4,8 @@
 #= require turbolinks
 #= require onboarding
 #= require add_child_form
+#= require sync
+#= require dashboard
 #= require_self
 
 # Submit buttons outside of their form

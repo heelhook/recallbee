@@ -1,12 +1,12 @@
 class ChildrenController < ApplicationController
-  respond_to :json
+  enable_sync
 
   def create
     @child = Child.new(child_params)
     @child.parent = current_user
     @child.save!
 
-    respond_with @child
+    head :no_content
   end
 
   private
