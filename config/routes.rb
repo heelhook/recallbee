@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :children, only: [:create]
   resources :toys, only: [:create]
 
+  get 'api/gender/guess' => 'api/gender#guess'
+
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'registrations',

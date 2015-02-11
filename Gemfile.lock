@@ -115,6 +115,8 @@ GEM
     form_data (0.1.0)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
+    gendered (0.0.5)
+      http (>= 0.6.2)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
     hashie (3.3.2)
@@ -304,6 +306,7 @@ DEPENDENCIES
   faye
   font-awesome-rails
   friendly_id (~> 5.1.0)
+  gendered
   gibbon!
   jbuilder (~> 2.0)
   jquery-rails

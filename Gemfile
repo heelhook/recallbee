@@ -50,6 +50,8 @@ gem 'sync'
 
 gem 'pundit'
 
+gem 'gendered'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
