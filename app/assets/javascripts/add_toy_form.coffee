@@ -1,5 +1,5 @@
 $ ->
-  $('button[data-role="new-toy"][data-childid]').on 'click', (e) ->
+  $('#children-list').on 'click', 'button[data-role="new-toy"][data-childid]', (e) ->
     name = $(e.target).data().childname
     id = $(e.target).data().childid
 
