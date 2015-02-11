@@ -1,2 +1,36 @@
-.child
-  h1 #{child.name}'s Toys
+.child.box[data-child-id=child.id]
+  h3
+    | #{child.name}'s Toys
+    .note
+      | Tracking 
+      span[data-role="count"]  #{pluralize child.toys.count, 'toy'}
+
+  .intro[class=(child.toys.any? ? 'hidden' : '')]
+    - case rand(2)
+    - when 0
+      h1 Great!
+      p
+        | We are now ready to track #{child.name}'s toys and 
+        span.highlight stay on top of all safety concerns 
+        | you should know about!
+    - when 1
+      h1 Perfect!
+      p
+        | We are ready to start tracking #{child.name}'s toys and make sure they are 
+        span.highlight totally safe!
+
+    p Let's add #{child.pronoun} first toy. Just click the button below.
+
+  .panel.panel-default.toy-list
+    ul.list-group
+      = sync partial: 'toy_item', collection: child.toys
+      = sync_new partial: 'toy_item', resource: Toy.new, scope: Toy.by_child(child)
+
+  .text-center
+    button.btn[type="button" data-toggle="modal" data-target='#new-toy' data-role="new-toy" data-childname=child.name data-childid=child.id]
+      span.glyphicon.glyphicon-plus
+      - if child.toys.empty?
+        |  Add #{child.name}'s first toy
+      - else
+        |  Add another toy
+

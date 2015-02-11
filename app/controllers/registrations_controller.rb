@@ -3,9 +3,9 @@ class RegistrationsController < Devise::RegistrationsController
 
   def after_sign_up_path_for(resource)
     if CompleteUserPolicy.new(current_user).complete?
-      '/dashboard'
+      dashboard_path
     else
-      '/profile'
+      edit_user_registration_path
     end
   end
 end

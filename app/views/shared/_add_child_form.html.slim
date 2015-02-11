@@ -8,12 +8,10 @@
     h4 What is this for?
 
     p
-      | We use your children's names to help you locate a faulty toy
-      | when the moment's right, so that we are able to help you know
-      |  whose room to check.
+      | We use your children's names to help you locate a faulty toy when the moment's right, so that we are able to help you know whose room to check.
 
   .col-md-6
-    .form
+    .form#new-child
       = form_for @child, remote: true do |f|
         .row
           .col-md-6
@@ -23,7 +21,7 @@
         .row
           .col-md-6
             .form-group
-              input.form-control#bday[type="text" placeholder="Birthday MM/DD/YYYY"]
+              = f.text_field :birthday, class: 'form-control', placeholder: "Birthday MM/DD/YYYY"
               span.note
                 b *
                 |  This is an optional field
@@ -34,10 +32,13 @@
         .row
           .col-md-6
             .form-group
-              b Gender:
-              |  
-              input[type="radio" name="gender" value="Girl"]
-                label[for="gender"] Girl
-              input[type="radio" name="gender" value="Boy"]
-                label[for="gender"] Boy
+              = f.radio_button :gender, :female
+              label.female[for="child_gender_female"]
+                span.fa.fa-venus
+                |  Girl
+            .form-group
+              = f.radio_button :gender, :male
+              label.male[for="child_gender_male"]
+                span.fa.fa-mars
+                |  Boy
 

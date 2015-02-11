@@ -48,6 +48,8 @@ gem 'faye'
 gem 'thin', require: false
 gem 'sync'
 
+gem 'pundit'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -68,3 +70,6 @@ group :development, :test do
   gem 'spring'
 end
 
+group :development, :assets do
+  gem 'jquery-smooth-scroll-rails', git: 'git@github.com:gretel/jquery-smooth-scroll-rails.git'
+end

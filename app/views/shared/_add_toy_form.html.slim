@@ -1,0 +1,7 @@
+.form
+  = form_for @toy, remote: true do |f|
+    = f.hidden_field :child_id, 'data-role' => 'child-id'
+    .row
+      .col-md-6
+        .form-group
+          = f.text_field :name, class: 'form-control', autofocus: true, placeholder: "Toy Name"

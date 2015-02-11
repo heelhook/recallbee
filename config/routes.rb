@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'dashboard' => 'dashboard#index'
 
   resources :children, only: [:create]
+  resources :toys, only: [:create]
 
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks',

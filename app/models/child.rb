@@ -6,4 +6,13 @@ class Child < ActiveRecord::Base
   sync_scope :by_parent, -> (parent) { where(parent_id: parent.id) }
 
   validates :name, presence: true
+
+  def pronoun
+    case gender
+    when 'female'; 'her'
+    when 'male'; 'his'
+    else
+      'their'
+    end
+  end
 end

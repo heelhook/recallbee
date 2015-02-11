@@ -3,23 +3,21 @@
     .container
       .row.header
         .col-md-12
-          h3
-            | #{current_user.first_name}'s Kids' Toys Inventory
+          h3 #{current_user.first_name}'s Kids' Toys
       .row
-        .col-md-9.box
-          #welcome-box[class=(current_user.children.any? ? 'hidden' : '')]
-            = render partial: 'empty'
+        .col-md-9
+          #welcome-box.box.col-md-12[class=(@show_welcome_box ? '' : 'hidden')]
+            = render partial: 'empty_child_list'
           #children-list
-            - current_user.children.each do |child|
             = sync partial: 'dashboard_item', collection: current_user.children
             = sync_new partial: 'dashboard_item', resource: Child.new, scope: Child.by_parent(current_user)
-
         .col-md-3.sidebar
           h4 Tools
 
           ul
             li
-              a[href='#' data-toggle="modal" data-target='#new-child'] Add My Child
+              a.btn.btn-gray.btn-micro[href='#' data-toggle="modal" data-target='#new-child'] Add Another Child
+          
 
 #new-child.modal.fade
   .modal-dialog.modal-lg
@@ -33,3 +31,18 @@
       .modal-footer
         a.create.btn.btn-micro.btn-gray[href='#' data-dismiss="modal"] Cancel
         a.create.btn.btn-micro[href='#' data-dismiss="modal" data-form="new_child" data-role="submit"] Done! Let's go!
+
+#new-toy.modal.fade
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        h4.modal-title
+          span[data-role="child-name"]
+          | 's New Toy
+
+      .modal-body
+        = render partial: 'shared/add_toy_form'
+
+      .modal-footer
+        a.create.btn.btn-micro.btn-gray[href='#' data-dismiss="modal"] Cancel
+        a.create.btn.btn-micro[href='#' data-dismiss="modal" data-form="new_toy" data-role="submit"] Done! Let's go!
