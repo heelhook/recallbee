@@ -1,8 +1,7 @@
 class Api::GenderController < ApplicationController
   def guess
-    name = Gendered::Name.new(params[:name])
-    name.guess!
+    gender = GenderGuesserService.guess(params[:name])
 
-    render json: { gender: name.gender }
+    render json: { gender: gender }
   end
 end
