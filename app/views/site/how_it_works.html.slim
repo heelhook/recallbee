@@ -1,62 +1,109 @@
-section#page-breadcrumb
-  .vertical-center.sun
-    .container
-      .row
-        .action
-          .col-sm-12
-            h1.title We track kids' toys and make sure they are safe
-            p All about how to easily protect children from faulty toys
-
-section#services
+section#how-it-works
   .container
     .row
-      .col-sm-4.text-center.padding.wow.fadeIn.animated[data-wow-duration="1000ms" data-wow-delay="300ms" style="visibility: visible; -webkit-animation-duration: 1000ms; -webkit-animation-delay: 300ms;"]
-        .single-service
-          .wow.scaleIn.animated[data-wow-duration="500ms" data-wow-delay="300ms" style="visibility: visible; -webkit-animation-duration: 500ms; -webkit-animation-delay: 300ms;"]
-            img[src="/assets/triangle/home/icon1.png" alt=""]
-          h2
-            | Incredibly Responsive
-          p
-            | Ground round tenderloin flank shank ribeye. Hamkevin meatball swine. Cow shankle beef sirloin chicken ground round.
-      .col-sm-4.text-center.padding.wow.fadeIn.animated[data-wow-duration="1000ms" data-wow-delay="600ms" style="visibility: visible; -webkit-animation-duration: 1000ms; -webkit-animation-delay: 600ms;"]
-        .single-service
-          .wow.scaleIn.animated[data-wow-duration="500ms" data-wow-delay="600ms" style="visibility: visible; -webkit-animation-duration: 500ms; -webkit-animation-delay: 600ms;"]
-            img[src="/assets/triangle/home/icon2.png" alt=""]
-          h2
-            | Superior Typography
-          p
-            | Hamburger ribeye drumstick turkey, strip steak sausage ground round shank pastrami beef brisket pancetta venison.
-      .col-sm-4.text-center.padding.wow.fadeIn.animated[data-wow-duration="1000ms" data-wow-delay="900ms" style="visibility: visible; -webkit-animation-duration: 1000ms; -webkit-animation-delay: 900ms;"]
-        .single-service
-          .wow.scaleIn.animated[data-wow-duration="500ms" data-wow-delay="900ms" style="visibility: visible; -webkit-animation-duration: 500ms; -webkit-animation-delay: 900ms;"]
-            img[src="/assets/triangle/home/icon3.png" alt=""]
-          h2
-            | Swift Page Builder
-          p
-            | Venison tongue, salami corned beef ball tip meatloaf bacon. Fatback pork belly bresaola tenderloin bone pork kevin shankle.
-      .col-sm-4.text-center.padding.wow.fadeIn.animated[data-wow-duration="1000ms" data-wow-delay="300ms" style="visibility: visible; -webkit-animation-duration: 1000ms; -webkit-animation-delay: 300ms;"]
-        .single-service
-          .wow.scaleIn.animated[data-wow-duration="500ms" data-wow-delay="300ms" style="visibility: visible; -webkit-animation-duration: 500ms; -webkit-animation-delay: 300ms;"]
-            img[src="/assets/triangle/services/1.png" alt=""]
-          h2
-            | Incredibly Responsive
-          p
-            | Ground round tenderloin flank shank ribeye. Hamkevin meatball swine. Cow shankle beef sirloin chicken ground round.
-      .col-sm-4.text-center.padding.wow.fadeIn.animated[data-wow-duration="1000ms" data-wow-delay="600ms" style="visibility: visible; -webkit-animation-duration: 1000ms; -webkit-animation-delay: 600ms;"]
-        .single-service
-          .wow.scaleIn.animated[data-wow-duration="500ms" data-wow-delay="600ms" style="visibility: visible; -webkit-animation-duration: 500ms; -webkit-animation-delay: 600ms;"]
-            img[src="/assets/triangle/services/2.png" alt=""]
-          h2
-            | Superior Typography
-          p
-            | Hamburger ribeye drumstick turkey, strip steak sausage ground round shank pastrami beef brisket pancetta venison.
-      .col-sm-4.text-center.padding.wow.fadeIn.animated[data-wow-duration="1000ms" data-wow-delay="900ms" style="visibility: visible; -webkit-animation-duration: 1000ms; -webkit-animation-delay: 900ms;"]
-        .single-service
-          .wow.scaleIn.animated[data-wow-duration="500ms" data-wow-delay="900ms" style="visibility: visible; -webkit-animation-duration: 500ms; -webkit-animation-delay: 900ms;"]
-            img[src="/assets/triangle/services/3.png" alt=""]
-          h2
-            | Swift Page Builder
-          p
-            | Venison tongue, salami corned beef ball tip meatloaf bacon. Fatback pork belly bresaola tenderloin bone pork kevin shankle.
+      #page-container.col-md-12.text-center
+        .page[data-id="1" data-next="2"]
+          h1.title We track kids' toys and make sure they are safe
+          h2.subtitle See how we easily help you stay on top of all your kids' toys
 
-= render partial: 'shared/landing/stats'
+
+        .page.hidden[data-id="2" data-next="3"]
+          h1.title Becoming a hero starts with you
+          h2.subtitle
+            | Let's start setting up protection for one of your children.
+
+          h2 Enter one of your children's name to see this in action:
+
+          .form
+            input#child_name[type="text" name="child_name" placeholder="Your Child's First Name"]
+            br
+            span.note We ask for this just to show you a real example of You + RecallBee!
+
+        .page.hidden[data-id="3" data-next="4"]
+          = image_tag 'triangle/home/profile1.png'
+          h1.title
+            | Great!
+          h2.subtitle
+            | We are now populating 
+            span[data-role="child_name"] Pablo
+            | 's toy list with some samples.
+
+          h2
+            | While we do that, 
+            b where would we send you safety alerts?
+            .note.col-md-6.col-md-offset-3
+              | We are actually going to send you a sample alert, so double-check your email address!
+
+          .form
+            input#email[type="email" name="email" placeholder="Enter your email address"]
+            br
+            span.note We never send spam! This is just to send you a sample alert.
+
+        .page.hidden[data-id="4" data-next="5"]
+          h1.title
+            | Perfect!
+          h2.subtitle
+            | We've compiled a small toy list sample for 
+            span[data-role="child_name"] Pablo
+
+          = image_tag 'toy-list.png'
+
+        .page.hidden[data-id="5" data-next="6"]
+          h1.title
+            | Happiness! 
+            span[data-role="child_name"] Pablo
+            |  loves all 
+            span[data-role="child_pronoun"] his
+            |  toys!
+          h2.subtitle
+            | ...until one day
+
+        .page.hidden[data-id="6" data-next="7"]
+          h1.title
+            | Toy 2 is recalled!
+          h2.subtitle
+            | Just like thousands of toys are recalled every year!
+
+          = image_tag 'toy-list-recalled.png'
+
+        .page.hidden[data-id="7" data-next="8"]
+          h1.title
+            | With so many things going on
+          h2.subtitle
+            | how will you find out that 
+            span[data-role="child_name"] Pablo
+            | 's toy is no longer safe?
+
+        .page.hidden[data-id="8" data-next="9"]
+          h1.title
+            | That's where RecallBee comes in!
+          h2.subtitle
+            | We alert you immediately that something's going on!
+
+          h2
+            = image_tag 'triangle/home/image3.png', width: 400
+            .note.col-md-8.col-md-offset-2
+              | We constantly analyze thousands of manufacturers' product recalls as well as monitor issues raised by parents and educators.
+
+        .page.hidden[data-id="9" data-next="10"]
+          h1.title
+            | We are live, and free
+          h2.subtitle
+            | Helping hundreds of families stay safe
+          = render partial: 'shared/landing/stats'
+
+          h2
+            .note
+              | It's your turn to be use all available tools at your disposal to protect 
+              span[data-role="child_name"] Pablo
+              |  and the rest of your family.
+
+          a.btn.btn-green[href=new_user_registration_path]
+            | Start today, its free!
+          .note
+            | And it only takes a minute!
+
+      .col-md-12.text-center
+        a.btn.btn-highlight.btn-common[href='#' data-role="navigation-next"]
+          | Continue 
+          span.fa.fa-angle-right

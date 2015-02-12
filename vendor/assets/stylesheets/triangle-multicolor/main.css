@@ -76,7 +76,7 @@
     text-transform: uppercase;
   }
 
-  .btn-common {
+  .button-common {
     font-size: 14px;
     color: #0099ae;
     border: 1px solid #0099ae;
@@ -94,8 +94,8 @@
   }
 
 
-  .btn-common:hover, 
-  .btn-common:focus{
+  .button-common:hover, 
+  .button-common:focus{
     outline: none;
     background: none;
     box-shadow: none;
@@ -489,7 +489,7 @@ ul.sub-menu {
   box-shadow: none;
 }
 
-.btn-submit {
+.button-submit {
   width: 100%;
   background-color: #4fcccd;
   color: #fff;
@@ -504,8 +504,8 @@ ul.sub-menu {
   padding: 10px;
 }
 
-.btn-submit:hover, 
-.btn-submit:focus{
+.button-submit:hover, 
+.button-submit:focus{
   color: #fff;
   outline: none;
   box-shadow: none;
@@ -613,7 +613,7 @@ ul.sub-menu {
   margin-bottom: 25px;
 }
 
-#home-slider .btn-common {
+#home-slider .button-common {
   margin-top: 20px;
 }
 
@@ -637,17 +637,6 @@ ul.sub-menu {
   margin-left: -24px;
   top: 50%;
   margin-top: -24px;
-}
-
-#action {
-  background-image: url(/assets/triangle/home/tour-bg.png);
-  background-color: #fbfafa;
-  background-repeat: repeat-x;
-  height: 157px;
-  background-position: center;
-  display: table;
-  position: static;
-  width: 100%;
 }
 
 .vertical-center{
@@ -690,7 +679,7 @@ ul.sub-menu {
   font-weight: 300;
 }
 
-.action .btn-common{
+.action .button-common{
   margin-top: 55px;
   float: left;
 }
@@ -1482,7 +1471,7 @@ Portfolio Details
   
 }
 
-.live-preview .btn-common{
+.live-preview .button-common{
   margin-top: 21px;
   padding: 13px 45px;
 }
@@ -1591,7 +1580,7 @@ Blog Default
   padding: 20px 0;
 }
 
-.timeline-date .btn-common{
+.timeline-date .button-common{
   font-size: 18px;
   color: #4a4a4a;
   font-weight: 300;
@@ -1970,7 +1959,7 @@ span.stButton_gradient,
   resize:none;
 }
 
-#contact-form .btn-submit {
+#contact-form .button-submit {
   width: 28%;
   margin: 5px auto;
 }
@@ -2113,10 +2102,10 @@ span.stButton_gradient,
   float: right;
 }
 
-.price-one .btn-buynow, 
-.price-two .btn-buynow, 
-.price-three .btn-buynow, 
-.price-four .btn-buynow   {  
+.price-one .button-buynow, 
+.price-two .button-buynow, 
+.price-three .button-buynow, 
+.price-four .button-buynow   {  
   border-radius: 0;
   color: #fff;
   padding: 12px;
@@ -2126,35 +2115,35 @@ span.stButton_gradient,
   display: block;
 }
 
-.price-one .btn-buynow  {
+.price-one .button-buynow  {
   background-color: #0d6fb1;
 }
 
-.price-two .btn-buynow  {
+.price-two .button-buynow  {
   background-color: #ac2429;
 }
 
-.price-three .btn-buynow  {
+.price-three .button-buynow  {
   background-color: #e78817;
 }
 
-.price-four .btn-buynow  {
+.price-four .button-buynow  {
   background-color: #5f7452;
 }
 
-.price-one .btn-buynow:hover  {
+.price-one .button-buynow:hover  {
   background-color: #0a5a90;
 }
 
-.price-two .btn-buynow:hover  {
+.price-two .button-buynow:hover  {
   background-color: #821b1e;
 }
 
-.price-three .btn-buynow:hover  {
+.price-three .button-buynow:hover  {
   background-color: #c57413;
 }
 
-.price-four .btn-buynow:hover  {
+.price-four .button-buynow:hover  {
   background-color: #48583e;
 }
 
@@ -2243,7 +2232,7 @@ span.stButton_gradient,
   padding-top: 1px;
 }
 
-.single-table .btn-signup {
+.single-table .button-signup {
   display: block;
   text-align: center;
   position:relative;
@@ -2255,10 +2244,10 @@ span.stButton_gradient,
   padding: 0;
 }
 
-.table-one .btn-signup:after, 
-.table-two .btn-signup:after, 
-.table-three .btn-signup:after, 
-.table-four .btn-signup:after {
+.table-one .button-signup:after, 
+.table-two .button-signup:after, 
+.table-three .button-signup:after, 
+.table-four .button-signup:after {
   content: "";
   position: absolute;  
   border-style: solid;
@@ -2270,23 +2259,23 @@ span.stButton_gradient,
   z-index: -1;
 }
 
-.table-one .btn-signup:after {
+.table-one .button-signup:after {
   border-color: #0d6fb1 transparent transparent;
 }
 
-.table-two .btn-signup:after {
+.table-two .button-signup:after {
   border-color: #ac2429 transparent transparent;
 }
 
-.table-three .btn-signup:after {
+.table-three .button-signup:after {
   border-color: #e78817 transparent transparent;
 }
 
-.table-four .btn-signup:after {
+.table-four .button-signup:after {
   border-color: #5f7452 transparent transparent;
 }
 
-.single-table .btn-signup a {
+.single-table .button-signup a {
   color: #fff;
   display: inline-block;
   overflow: hidden;
@@ -2296,20 +2285,20 @@ span.stButton_gradient,
 }
 
 
-.table-one .btn-signup:hover.btn-signup:after{
+.table-one .button-signup:hover.button-signup:after{
  border-color: #0b598d transparent transparent;
 }
 
 
-.table-two .btn-signup.btn-signup:hover:after {
+.table-two .button-signup.button-signup:hover:after {
   border-color: #831c20 transparent transparent;
 }
 
-.table-three .btn-signup.btn-signup:hover:after {
+.table-three .button-signup.button-signup:hover:after {
  border-color: #bd7014 transparent transparent;
 }
 
-.table-four .btn-signup.btn-signup:hover:after{
+.table-four .button-signup.button-signup:hover:after{
   border-color: #3d4b35 transparent transparent;
 }
 
@@ -2359,7 +2348,7 @@ span.stButton_gradient,
   text-transform: uppercase;
 }
 
-.btn-error {
+.button-error {
   font-weight: 300;
   margin-top: 30px;
   padding:25px 55px;
@@ -2372,7 +2361,7 @@ span.stButton_gradient,
   margin-bottom: 50px;
 }
 
-.btn-error:hover, .btn-error:focus  {
+.button-error:hover, .button-error:focus  {
   background-color: #cc9b59;
   border-color:#cc9b59;
   color:#fff;
@@ -2450,7 +2439,7 @@ span.stButton_gradient,
   text-transform: uppercase;
 }
 
-.btn-error {
+.button-error {
   background-color: rgba(0, 0, 0, 0);
   border: 3px solid #4FCCCD;
   color: #797979;
@@ -2464,7 +2453,7 @@ span.stButton_gradient,
   font-family: 'Open Sans', sans-serif;
 }
 
-.btn-error:hover, .btn-error:focus  {
+.button-error:hover, .button-error:focus  {
   background-color: #4FCCCD;
   border-color:#4FCCCD;
   color:#fff;

@@ -2,7 +2,7 @@
   h3
     | #{child.name}'s Toys
     .note
-      | Tracking 
+      | RecallBee is tracking 
       span[data-role="count"]  #{pluralize child.toys.count, 'toy'}
 
   .intro[class=(child.toys.any? ? 'hidden' : '')]

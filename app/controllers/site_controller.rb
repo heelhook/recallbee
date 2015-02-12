@@ -14,5 +14,9 @@ class SiteController < ApplicationController
   end
 
   def how_it_works
+    @child = Child.new(name: 'Pablo')
+    @child.toys = [
+      Toy.new(name: 'Toy 1'),
+    ]
   end
 end
