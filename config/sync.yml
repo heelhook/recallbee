@@ -2,6 +2,7 @@
 development:
   server: "http://localhost:9292/faye"
   adapter_javascript_url: "http://localhost:9292/faye/faye.js"
+  auth_token: 7121ca6a67bb28def59b560c0f1709ecb8233d78122e95a07ed29f62b475a98d6dde70a6aeafc9d52a2a80fd1d1c17e59656f6e6650cab34d0d8f620d9f495b2
   adapter: "Faye"
   async: true
 
@@ -26,8 +27,8 @@ test:
   async: false
 
 production:
-  server: "http://example.com/faye"
-  adapter_javascript_url: "http://localhost:9292/faye/faye.js"
+  server: "http://recallbee.com/faye"
+  adapter_javascript_url: "http://recallbee:9292/faye/faye.js"
   adapter: "Faye"
-  auth_token: "ee8d6755a31db0d66f760e83219c3291ec016697fdc6c4bac19ee82a089af5e4"
+  auth_token: <%= ENV['faye_auth'] %>
   async: true

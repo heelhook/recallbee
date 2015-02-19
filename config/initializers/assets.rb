@@ -9,10 +9,8 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 Rails.application.config.assets.precompile += %w(
-  landing.css
-  landing.js
-  devise.css
-  devise.js
+  landing.css landing.js
+  devise.css devise.js
   react/theme.js
   *.png
   *.jpg
