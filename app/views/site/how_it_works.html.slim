@@ -2,12 +2,12 @@ section#how-it-works
   .container
     .row
       #page-container.col-md-12.text-center
-        .page[data-id="1" data-next="2"]
+        .page[data-id="1"]
           h1.title We track kids' toys and make sure they are safe
           h2.subtitle See how we easily help you stay on top of all your kids' toys
 
 
-        .page.hidden[data-id="2" data-next="3"]
+        .page.hidden[data-id="2"]
           h1.title Becoming a hero starts with you
           h2.subtitle
             | Let's start setting up protection for one of your children.
@@ -15,11 +15,11 @@ section#how-it-works
           h2 Enter one of your children's name to see this in action:
 
           .form
-            input#child_name[type="text" name="child_name" placeholder="Your Child's First Name"]
+            input#child_name[type="text" name="child_name" placeholder="Your Child's First Name" value="#{@child.name}"]
             br
             span.note We ask for this just to show you a real example of You + RecallBee!
 
-        .page.hidden[data-id="3" data-next="4"]
+        .page.hidden[data-id="3"]
           = image_tag 'triangle/home/profile1.png'
           h1.title
             | Great!
@@ -35,11 +35,11 @@ section#how-it-works
               | We are actually going to send you a sample alert, so double-check your email address!
 
           .form
-            input#email[type="email" name="email" placeholder="Enter your email address"]
+            input#email[type="email" name="email" placeholder="Enter your email address" value="#{@email}"]
             br
             span.note We never send spam! This is just to send you a sample alert.
 
-        .page.hidden[data-id="4" data-next="5"]
+        .page.hidden[data-id="4"]
           h1.title
             | Perfect!
           h2.subtitle
@@ -48,44 +48,44 @@ section#how-it-works
 
           = image_tag 'toy-list.png'
 
-        .page.hidden[data-id="5" data-next="6"]
+        .page.hidden[data-id="5"]
           h1.title
             | Happiness! 
             span[data-role="child_name"] Pablo
-            |  loves all 
-            span[data-role="child_pronoun"] his
+            |  loves 
+            span[data-role="child_pronoun"] the
             |  toys!
           h2.subtitle
-            | ...until one day
-
-        .page.hidden[data-id="6" data-next="7"]
-          h1.title
-            | Toy 2 is recalled!
-          h2.subtitle
-            | Just like thousands of toys are recalled every year!
+            | ...until one day, 
+            b Toy 2 is recalled!
+            div.note
+              | (Just like thousands of toys are recalled every year!)
 
           = image_tag 'toy-list-recalled.png'
 
-        .page.hidden[data-id="7" data-next="8"]
+        .page.hidden[data-id="7"]
           h1.title
-            | With so many things going on
+            | With so many things going on,
           h2.subtitle
             | how will you find out that 
             span[data-role="child_name"] Pablo
             | 's toy is no longer safe?
 
-        .page.hidden[data-id="8" data-next="9"]
+        .page.hidden[data-id="8"]
           h1.title
             | That's where RecallBee comes in!
           h2.subtitle
-            | We alert you immediately that something's going on!
+            | We alert you 
+            b
+              u immediately
+            |  about your child's exposure to a harmful toy!
 
           h2
             = image_tag 'triangle/home/image3.png', width: 400
             .note.col-md-8.col-md-offset-2
-              | We constantly analyze thousands of manufacturers' product recalls as well as monitor issues raised by parents and educators.
+              | We constantly analyze thousands of manufacturers' product recalls and monitor issues raised by parents and educators.
 
-        .page.hidden[data-id="9" data-next="10"]
+        .page.hidden[data-id="9"]
           h1.title
             | We are live, and free
           h2.subtitle
@@ -93,17 +93,17 @@ section#how-it-works
           = render partial: 'shared/landing/stats'
 
           h2
-            .note
-              | It's your turn to be use all available tools at your disposal to protect 
+            .note.col-md-8.col-md-offset-2
+              | It's your turn to be able to use all available tools at your disposal to protect 
               span[data-role="child_name"] Pablo
               |  and the rest of your family.
 
-          a.btn.btn-green[href=new_user_registration_path]
+          a.btn.btn-register[href=new_user_registration_path]
             | Start today, its free!
           .note
             | And it only takes a minute!
 
       .col-md-12.text-center
-        a.btn.btn-highlight.btn-common[href='#' data-role="navigation-next"]
+        a.btn.btn-success.btn-lg[href='#' data-role="navigation-next"]
           | Continue 
           span.fa.fa-angle-right

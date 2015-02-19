@@ -3,7 +3,6 @@ class ChildrenController < ApplicationController
 
   def create
     @child = Child.new(child_params)
-    @child.parent = current_user
     @child.save!
 
     head :no_content
@@ -16,6 +15,8 @@ class ChildrenController < ApplicationController
       :name,
       :birthday,
       :gender,
+    ).merge(
+      parent_id: current_user.id,
     )
   end
 end

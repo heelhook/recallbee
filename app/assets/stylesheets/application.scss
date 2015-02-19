@@ -20,3 +20,13 @@
  */
 
 a.btn-social { margin-right: 10px; }
+
+.navbar.normal .navbar-collapse .navbar-nav {
+  > li {
+    > a.btn.btn-primary {
+      padding: 10px 20px;
+      margin: 15px;
+      font-size: 14px;
+    }
+  }
+}

@@ -2,15 +2,15 @@ section#how-it-works {
   background-image: url("/assets/triangle/coming-soon-bg.png");
   background-position: center top;
   background-repeat: repeat-x;
-  padding: 40px 0;
-  overflow: hidden;
 
   h1.title {
     font-weight: bold;
+    color: #1887b9;
   }
 
   h2.subtitle {
     margin-bottom: 50px;
+    line-height: 1.25em;
   }
 
   h2 {
@@ -38,7 +38,10 @@ section#how-it-works {
     margin-bottom: 50px;
   }
 
-  #stats {
-    background: none;
+  .stats { background: none; }
+
+  a.btn-register {
+    margin-top: 50px;
   }
 }
+

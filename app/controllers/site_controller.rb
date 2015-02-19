@@ -6,17 +6,24 @@ class SiteController < ApplicationController
       "Alerts when your kids’ toys become safety hazards",
       "Free alerts when your kids’ toys become safety hazards"
     )
-
-    @hero_signup_buttons_in_same_line = ab_test('hero signup buttons in same line', 'true', 'false')
   end
 
   def about
   end
 
   def how_it_works
-    @child = Child.new(name: 'Pablo')
+    if current_user
+      @child = current_user.children.try(:first) || Child.new
+      @email = current_user.email
+    else
+      @child = Child.new(name: session[:child_name])
+      @email = session[:email]
+    end
+
     @child.toys = [
       Toy.new(name: 'Toy 1'),
     ]
+
+    @skip_footer = true
   end
 end

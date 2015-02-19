@@ -27,7 +27,7 @@
       = sync_new partial: 'toy_item', resource: Toy.new, scope: Toy.by_child(child)
 
   .text-center
-    button.btn[type="button" data-toggle="modal" data-target='#new-toy' data-role="new-toy" data-childname=child.name data-childid=child.id]
+    a.btn.btn-primary[type="button" data-toggle="modal" data-target='#new-toy' data-role="new-toy" data-childname=child.name data-childid=child.id]
       span.glyphicon.glyphicon-plus
       - if child.toys.empty?
         |  Add #{child.name}'s first toy

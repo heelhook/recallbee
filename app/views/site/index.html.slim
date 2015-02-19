@@ -7,17 +7,18 @@ section#home-slider
           p
             | We track all your kids' toys and notify you immediately when they have safety issues.
 
+          a.btn.btn-primary.btn-lg[href=how_it_works_path] See It In Action
+          |  
           - if current_user
-            a.button.button-highlight.button-common[href=dashboard_path] OPEN YOUR DASHBOARD
+            a.btn.btn-primary.btn-lg[href=dashboard_path] OPEN YOUR DASHBOARD
           - else
-            a.button.button-highlight.button-common[href=new_user_registration_path] START TRACKING TOYS FOR FREE
-          a.button.button-common[href="#"] Learn more
+            a.btn.btn-success.btn-lg[href=new_user_registration_path] Sign Up Now!
 
-        img.slider-hill[src="/assets/triangle/home/slider/hill.png" alt="slider image"]
-        img.slider-house[src="/assets/triangle/home/slider/house.png" alt="slider image"]
-        img.slider-sun[src="/assets/triangle/home/slider/sun.png" alt="slider image"]
-        img.slider-birds1[src="/assets/triangle/home/slider/birds1.png" alt="slider image"]
-        img.slider-birds2[src="/assets/triangle/home/slider/birds2.png" alt="slider image"]
+        img.slider-hill[src="/assets/triangle/home/slider/hill.png"]
+        img.slider-house[src="/assets/triangle/home/slider/house.png"]
+        img.slider-sun[src="/assets/triangle/home/slider/sun.png"]
+        img.slider-birds1[src="/assets/triangle/home/slider/birds1.png"]
+        img.slider-birds2[src="/assets/triangle/home/slider/birds2.png"]
   .preloader
     i.fa.fa-sun-o.fa-spin
 section#services
@@ -59,7 +60,7 @@ section.full-hero.responsive
               | Did you know that in 2013 alone one toy was recalled every three days?
           .col-sm-5.text-center.wow.fadeInRight[data-wow-duration="500ms" data-wow-delay="300ms"]
             .tour-button
-              a.button.button-highlight.button-common[href=new_user_registration_path] Start Now, It's Free!
+              a.btn.btn-success.btn-lg[href=new_user_registration_path] Start Now, It's Free!
 section#features
   .container
     .row
@@ -77,7 +78,7 @@ section#features
           p
             | We don't believe in artificial pay-walls, we believe in getting you the most reliable protection from hazardous toys as fast as possible.
           p
-            a.button.button-common[href=new_user_registration_path] Get Started Now
+            a.btn.btn-success.btn-lg[href=new_user_registration_path] Instant Protection For Your Kids, Sign Up Now!
         .col-sm-5.wow.fadeInRight[data-wow-duration="500ms" data-wow-delay="300ms"]
           img.img-responsive[src="/assets/triangle/home/image3.png" alt=""]
 
@@ -94,6 +95,10 @@ section#clients
             | Happy Parents, Safe Kids
           p
             | Our goal is to make sure our kids are safe.
+
+          a.btn.btn-primary.btn-lg[href=how_it_works_path] See RecallBee In Action
+          br
+          span.note No credit card or registration required!
 
 section.full-hero.responsive
   .vertical-center
@@ -117,4 +122,4 @@ section.full-hero.responsive
                   input.form-control[type="email" name="EMAIL" placeholder="Email"]
               .row
                 .col-md-8
-                  button.button.button-submit[type="submit"] Stay informed!
+                  button.btn.btn-primary.btn-fullsize[type="submit"] Stay informed!

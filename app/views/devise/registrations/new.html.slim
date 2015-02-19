@@ -22,10 +22,7 @@ section
                   i.fa[class="fa-#{provider.to_s}"]
                   = "Sign in with #{provider.to_s.titleize}"
 
-          .row
-            .col-md-12.text-center
-              a.btn.btn-common.btn-green.btn-lg#show_form[href='#'] Or use the standard signup form
-          #form.hidden
+          #form
             h2.text-center - or -
             = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
               .row
@@ -41,4 +38,4 @@ section
                   = f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Password'
               .row
                 .col-md-12
-                  = f.submit "Start monitoring toys", class: 'form-control btn btn-common btn-green'
+                  = f.submit @sign_up_button_text, class: 'btn btn-register btn-lg btn-fullsize'

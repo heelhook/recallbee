@@ -1,0 +1,125 @@
+/*
+ *= require twitter/bootstrap
+ *= require font-awesome
+ *= require bootstrap-social
+ *= require animate
+ *= require triangle/main
+ *= require triangle/responsive
+ *= require how-it-works
+ */
+@import "react/modules/mixins";
+
+#home-slider .slide-text { width: 600px; }
+
+div.nav {
+  float: right;
+  line-height: 60px;
+}
+
+.button-highlight {
+  background-color: #4fcccd;
+  color: #fff;
+  border-radius: 3px;
+}
+
+h1.strong {
+  font-weight: bold;
+  color: black;
+}
+
+form .col-md-4, form .col-md-8, form .col-md-5, form .col-md-10 {
+  padding-left: 5px;
+  padding-right: 2px;
+}
+
+form .row {
+  padding-bottom: 5px;
+}
+
+.full-hero {
+  background-image: url(/assets/triangle/home/tour-bg.png);
+  background-color: #fbfafa;
+  background-repeat: repeat-x;
+  height: 157px;
+  background-position: center;
+  display: table;
+  position: static;
+  width: 100%;
+
+  h1 { margin-top: 0; }
+
+  p {
+    font-size: 18px;
+    margin-bottom: 0;
+    font-weight: 300;
+  }
+
+  .btn {
+    float: left;
+  }
+}
+
+.btn {
+  border-radius: 3px;
+  border: 1px solid #999;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom-width: 3px;
+}
+
+.btn-primary {
+  color: #ffffff;
+  background-color: #06C;
+  border-color: #105296;
+
+  &:hover {
+    background-color: #1a7de6;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.btn-success {
+  background-color: #19b533;
+  border-color: #09921f;
+}
+
+.btn-lg {
+  display: inline-block;
+  font-size: 1.5em;
+  line-height: 1em;
+  padding: 0.75em 1em;
+}
+
+.btn-social {
+  border: 0px;
+}
+
+.btn.btn-fullsize {
+  width: 100%;
+}
+
+.btn-register {
+  @include background-gradient(#8fc857, #5c9425);
+  border-radius: 8px;
+  border: 1px solid #5c9425;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 30px;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.2);
+  font-family: "Lucida Grande", Helvetica, sans-serif;
+  outline: none;
+
+  &:hover, &:active, &:focus {
+    color: #fff;
+    @include background-gradient(#8fc857, #5c9425);
+  }
+}
+
+.action.stats {
+  h1 {
+    font-size: 60px;
+    color: #00aeef;
+  }
+}

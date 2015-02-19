@@ -1,0 +1,151 @@
+@import "react/modules/mixins";
+
+.btn {
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 1;
+  padding: 13px 32px;
+  font-weight: 400;
+  font-size: 17px;
+  color: #fff;
+  text-shadow: rgba(0,0,0,0.2) 0 -1px 0;
+  border: 0px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px, inset rgba(255, 255, 255, 0.88) 0px 1px 3px -1px;
+  background-color: #4589E3;
+  @include background-gradient(#5DA4FF, #417BFF);
+  text-decoration: none;
+
+  @include transition(all 0s linear);
+
+  &:active {
+    @include background-gradient(#5DA4FF, #417BFF);
+    box-shadow: inset 0px 3px 3px rgba(0, 0, 0, 0.29);
+  }
+
+  &.btn-small {
+    padding: 10px 33px;
+    border: 1px solid #68A2EE;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &.btn-micro {
+    padding: 7px 28px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+}
+
+.btn-success {
+  font-size: 16px;
+  @include border-top-radius(3px);
+  @include border-bottom-radius(3px);
+  color: #fff;
+  border: 1px solid #518e1e;
+  text-shadow: 0px -1px 0px #75cd2b;
+  @include background-gradient(#5da322, #8ab24f);
+  @include transition(all border linear 0.2s);
+  @include transition(box-shadow linear 0.2s);
+  @include transition(background linear 0.2s ease-out);
+
+  &:hover {
+    @include background-gradient(#5da322, #8ab24f);
+  }
+}
+
+.btn-primary {
+  color: #fff;
+  text-shadow: rgba(0,0,0,0.2) 0 -1px 0;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px, inset rgba(255, 255, 255, 0.88) 0px 1px 3px -1px;
+  background-color: #4589E3;
+  @include background-gradient(#5DA4FF, #417BFF);
+
+  &:hover, &:focus {
+    color: #fff;
+  }
+
+  &:active {
+    @include background-gradient(#5DA4FF, #417BFF);
+    box-shadow: inset 0px 3px 3px rgba(0, 0, 0, 0.29);
+  }
+}
+
+.btn-outline {
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  vertical-align: middle;
+  zoom: 1;
+  color: #fff;
+  padding: 12px 31px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  background: rgba(0, 0, 0, 0.15);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+
+  @include transition(all 0.2s linear);
+
+  &:hover {
+    text-decoration: none;
+    color: #ddd;
+    border-color: #ddd;
+  }
+}
+
+.btn-gray {
+  color: #333;
+  text-shadow: 0 1px 0 #fff;
+  box-shadow: inset 0 1px 0 #fff;
+  @include background-gradient(#f7f8fa, #eff1f4);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.075);
+  border: solid 1px #ccc;
+
+  &:hover, &:focus { color: #333; }
+  &:active { @include background-gradient(#f7f8fa, #eff1f4); }
+}
+
+.btn-clear {
+  -webkit-font-smoothing: antialiased;
+  border: 0;
+  outline: none;
+  padding: 1px;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 5px;
+  @include box-shadow(0, 1px, 0, rgba(0, 0, 0, 0.075));
+
+  @include background-gradient(#ccd0d6, #adb2bb);
+
+  span {
+    display: block;
+    font-size: 14px;
+    padding-left: 23px;
+    padding-right: 23px;
+    height: 36px;
+    line-height: 33px;
+    border-radius: 4px;
+    font-weight: bold;
+
+    color: #444;
+    text-shadow: 0 1px 0 white;
+    @include background-gradient(#f7f8fa, #eff1f4);
+    @include box-shadow(inset, 0, 1px, 0, white);
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active, &.active {
+    @include background-gradient(#b5bac2, #b5bac2);
+
+    span {
+      color: #444;
+      @include background-gradient(#e6e8eb, #eff1f4);
+      @include box-shadow(inset, 0, 1px, 0, rgba(0,0,0,0.1));
+    }
+  }
+}

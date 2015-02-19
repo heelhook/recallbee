@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   devise :omniauthable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :omniauthable
 
+  validates :email, uniqueness: { case_sensitive: false }
+
   def self.create_from_omniauth(params)
     attributes = {
       email: params['info']['email'],
