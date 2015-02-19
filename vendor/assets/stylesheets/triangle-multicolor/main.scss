@@ -669,14 +669,18 @@ ul.sub-menu {
   padding: 0 48px;
 }
 
-.action h1{
-  margin-top: 0;
-}
+.action {
+  h1 {
+    margin-top: 0;
+  }
 
-.action p{
-  font-size: 18px;
-  margin-bottom: 0;
-  font-weight: 300;
+  h3 { font-size: 16px; }
+
+  p {
+    font-size: 18px;
+    margin-bottom: 0;
+    font-weight: 300;
+  }
 }
 
 .action .button-common{
@@ -891,15 +895,6 @@ ul.sub-menu {
   -ms-transition: all 0.5s ease;  
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
-}
-
-.count h1{
-  font-size: 60px;
-  color: #00aeef;
-}
-
-.count h3{
-  font-size: 16px;
 }
 
 .progress .progress-bar.six-sec-ease-in-out {
