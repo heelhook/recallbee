@@ -14,11 +14,11 @@ section#home-slider
           - else
             a.btn.btn-success.btn-lg[href=new_user_registration_path] Sign Up Now!
 
-        img.slider-hill[src="/assets/triangle/home/slider/hill.png"]
-        img.slider-house[src="/assets/triangle/home/slider/house.png"]
-        img.slider-sun[src="/assets/triangle/home/slider/sun.png"]
-        img.slider-birds1[src="/assets/triangle/home/slider/birds1.png"]
-        img.slider-birds2[src="/assets/triangle/home/slider/birds2.png"]
+        img.slider-hill[src=image_path("triangle/home/slider/hill.png")]
+        img.slider-house[src=image_path("triangle/home/slider/house.png")]
+        img.slider-sun[src=image_path("triangle/home/slider/sun.png")]
+        img.slider-birds1[src=image_path("triangle/home/slider/birds1.png")]
+        img.slider-birds2[src=image_path("triangle/home/slider/birds2.png")]
   .preloader
     i.fa.fa-sun-o.fa-spin
 section#services
@@ -27,7 +27,7 @@ section#services
       .col-sm-4.text-center.padding.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="300ms"]
         .single-service
           .wow.scaleIn[data-wow-duration="500ms" data-wow-delay="300ms"]
-            img[src="/assets/triangle/services/1.png" alt=""]
+            img[src=image_path("triangle/services/1.png")]
           h2
             | It all starts with you...
           p
@@ -35,7 +35,7 @@ section#services
       .col-sm-4.text-center.padding.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="600ms"]
         .single-service
           .wow.scaleIn[data-wow-duration="500ms" data-wow-delay="600ms"]
-            img[src="/assets/triangle/home/icon1.png" alt=""]
+            img[src=image_path("triangle/home/icon1.png")]
           h2
             | ... we constantly monitor toys...
           p
@@ -43,7 +43,7 @@ section#services
       .col-sm-4.text-center.padding.wow.fadeIn[data-wow-duration="1000ms" data-wow-delay="900ms"]
         .single-service
           .wow.scaleIn[data-wow-duration="500ms" data-wow-delay="900ms"]
-            img[src="/assets/triangle/home/cycle.png" alt=""]
+            img[src=image_path("triangle/home/cycle.png")]
           h2
             | ... you get immediate alerts
           p
@@ -66,7 +66,7 @@ section#features
     .row
       .single-features
         .col-sm-5.wow.fadeInLeft[data-wow-duration="500ms" data-wow-delay="300ms"]
-          img.img-responsive[src="/assets/triangle/home/image1.png" alt=""]
+          img.img-responsive[src=image_path("triangle/home/image1.png")]
         .col-sm-6.wow.fadeInRight[data-wow-duration="500ms" data-wow-delay="300ms"]
           h2 Catch unsafe toys easily
           p
@@ -80,7 +80,7 @@ section#features
           p
             a.btn.btn-success.btn-lg[href=new_user_registration_path] Instant Protection For Your Kids, Sign Up Now!
         .col-sm-5.wow.fadeInRight[data-wow-duration="500ms" data-wow-delay="300ms"]
-          img.img-responsive[src="/assets/triangle/home/image3.png" alt=""]
+          img.img-responsive[src=image_path("triangle/home/image3.png")]
 
 = render partial: 'shared/landing/stats'
 
@@ -90,7 +90,7 @@ section#clients
       .col-sm-12
         .clients.text-center.wow.fadeInUp[data-wow-duration="500ms" data-wow-delay="300ms"]
           p
-            img.img-responsive[src="/assets/triangle/home/clients.png" alt=""]
+            img.img-responsive[src=image_path("triangle/home/clients.png")]
           h1.title
             | Happy Parents, Safe Kids
           p
