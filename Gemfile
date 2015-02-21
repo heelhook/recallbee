@@ -77,4 +77,4 @@ group :development, :test do
   gem 'spring'
 end
 
-gem 'jquery-smooth-scroll-rails', git: 'git@github.com:gretel/jquery-smooth-scroll-rails.git'
+gem 'jquery-smooth-scroll-rails', git: 'https://github.com/gretel/jquery-smooth-scroll-rails'

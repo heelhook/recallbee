@@ -7,7 +7,7 @@ GIT
       multi_json (>= 1.9.0)
 
 GIT
-  remote: git@github.com:gretel/jquery-smooth-scroll-rails.git
+  remote: https://github.com/gretel/jquery-smooth-scroll-rails
   revision: 0ca6feb7d31eaa2cc4aa1aa98d5dd237f657e9f3
   specs:
     jquery-smooth-scroll-rails (0.0.4)
