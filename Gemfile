@@ -43,6 +43,8 @@ gem 'domp'
 
 gem 'gibbon', github: "amro/gibbon"
 
+gem 'mysql2'
+
 gem 'faye'
 gem 'thin', require: false
 gem 'sync'
