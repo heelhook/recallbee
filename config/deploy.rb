@@ -10,6 +10,8 @@ set :repo_url, 'git@github.com:heelhook/recallbee.git'
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/recallbee/app'
 
+set :assets_roles, [:web, :app]
+
 # Default value for :scm is :git
 # set :scm, :git
 
@@ -34,8 +36,25 @@ set :deploy_to, '/home/recallbee/app'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-namespace :deploy do
+namespace :sync do
+  desc 'Copy sync.yml file'
+  task :setup do
+    content = File.read(Pathname.new('config/sync.yml'))
 
+    on release_roles :all do
+      execute :mkdir, "-pv", File.dirname(shared_path.join('config/sync.yml'))
+      upload! StringIO.new(content), shared_path.join('config/sync.yml')
+    end
+  end
+
+  task :sync_symlink do
+    set :linked_files, fetch(:linked_files, []).push(shared_path.join('config/sync.yml'))
+  end
+  after "deploy:started", "sync:sync_symlink"
+end
+
+
+namespace :deploy do
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
