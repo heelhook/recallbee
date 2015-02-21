@@ -1,1 +1,1 @@
-$mixpanel = Mixpanel::Tracker.new(MIXPANEL_TOKEN)
+$mixpanel = Mixpanel::Tracker.new(Rails.application.secrets.mixpanel_token)
