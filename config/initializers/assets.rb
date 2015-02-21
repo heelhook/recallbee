@@ -12,6 +12,5 @@ Rails.application.config.assets.precompile += %w(
   landing.css landing.js
   devise.css devise.js
   react/theme.js
-  *.png
-  *.jpg
+  *.png *.jpg *.ico
   )

@@ -385,7 +385,7 @@ ul.sub-menu {
 
 #footer {
   padding-bottom: 10px;
-  background-image: url(/assets/triangle/home/footer.png);
+  background-image: image-url("triangle/home/footer.png");
   background-repeat: repeat-x;
   background-position: bottom;
   background-size: contain;
@@ -531,7 +531,7 @@ ul.sub-menu {
 *******Home Page******
 **************************/
 #home-slider {
-  background: url(/assets/triangle/home/slider-bg.png) 0 100% repeat-x;
+  background: image-url("triangle/home/slider-bg.png") 0 100% repeat-x;
   position: relative;
 }
 
@@ -741,7 +741,7 @@ ul.sub-menu {
 }
 
 #page-breadcrumb {
-  background-image: url(/assets/triangle/home/tour-bg.png);
+  background-image: image-url("triangle/home/tour-bg.png");
   background-color: #fbfafa;
   background-repeat: repeat-x;
   height: 130px;
@@ -769,7 +769,7 @@ ul.sub-menu {
 }
 
 .tour-button {
-  background-image: url(/assets/triangle/home/tour-icon2.png);
+  background-image: image-url("triangle/home/tour-icon2.png");
   height: 100%;
   background-repeat: no-repeat;
   position: absolute;
@@ -880,12 +880,12 @@ ul.sub-menu {
 
 .right.team-carousel-control {
   right: -50px;
-  background-image: url(/assets/triangle/aboutus/right.png);
+  background-image: image-url("triangle/aboutus/right.png");
 }
 
 .left.team-carousel-control {
   left: -50px;
-  background-image: url(/assets/triangle/aboutus/left.png);
+  background-image: image-url("triangle/aboutus/left.png");
 }
 
 .team-carousel-control:hover{
@@ -1111,7 +1111,7 @@ ul.elements li > i{
   left: 0;
   width: 13px;
   height: 16px;
-  background: url(/assets/triangle/portfolio/icon.png);
+  background: image-url("triangle/portfolio/icon.png");
   top: 5px;
 }
 
@@ -1135,7 +1135,7 @@ ul.elements li > i{
 }
 
 .pagination li:first-child a{
-  background: url(/assets/triangle/portfolio/left.png);
+  background: image-url("triangle/portfolio/left.png");
   background-repeat: no-repeat;
   text-indent: -999999999px;
   background-position: center top 10px;
@@ -1149,7 +1149,7 @@ ul.elements li > i{
 }
 
 .pagination li:first-child a:hover{
-  background: url(/assets/triangle/portfolio/left.png);
+  background: image-url("triangle/portfolio/left.png");
   background-position: center top -37px;
   background-repeat: no-repeat;
   -webkit-transition: 300ms;
@@ -1159,7 +1159,7 @@ ul.elements li > i{
 }
 
 .pagination li:last-child a{
-  background: url(/assets/triangle/portfolio/right.png);
+  background: image-url("triangle/portfolio/right.png");
   background-repeat: no-repeat;
   text-indent: -999999999px;
   background-position: center top 10px;
@@ -1173,7 +1173,7 @@ ul.elements li > i{
 }
 
 .pagination li:last-child a:hover{
-  background: url(/assets/triangle/portfolio/right.png);
+  background: image-url("triangle/portfolio/right.png");
   background-position: center top -37px;
   background-repeat: no-repeat;
   -webkit-transition: 300ms;
@@ -1592,7 +1592,7 @@ Blog Default
   right: 1px;
   content: "";
   top: 15px;
-  background: url(/assets/triangle/blog/left.png);
+  background: image-url("triangle/blog/left.png");
   width: 43px;
   height: 54px;
 }
@@ -1606,7 +1606,7 @@ Blog Default
   left: -2px;
   content: "";
   top: 86px;
-  background: url(/assets/triangle/blog/right.png);
+  background: image-url("triangle/blog/right.png");
   width: 43px;
   height: 54px;
 }
@@ -1669,7 +1669,7 @@ Blog with right sidebar
   margin-left: 0;
   width: 94px;
   height: 140px;
-  background: url(/assets/triangle/blog/blog-arrow.png);
+  background: image-url("triangle/blog/blog-arrow.png");
   -webkit-animation: fadeInLeft 400ms;
   animation: fadeInLeft 400ms;
 }
@@ -2561,22 +2561,22 @@ span.stButton_gradient,
 }
 
 #countdown li.angle-one {
-  background-image: url(/assets/triangle/coming-soon1.png);
+  background-image: image-url("triangle/coming-soon1.png");
   left: 120px;
 }
 
 #countdown li.angle-two {
-  background-image: url(/assets/triangle/coming-soon2.png);
+  background-image: image-url("triangle/coming-soon2.png");
   left: 40px;
 }
 
 #countdown li.angle-three {
-  background-image: url(/assets/triangle/coming-soon3.png);
+  background-image: image-url("triangle/coming-soon3.png");
   right: 40px;
 }
 
 #countdown li.angle-four {
-  background-image: url(/assets/triangle/coming-soon4.png);
+  background-image: image-url("triangle/coming-soon4.png");
   right: 120px;
 }
 

@@ -9,11 +9,11 @@ html[lang="en"]
     = stylesheet_link_tag    'landing', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'landing', 'data-turbolinks-track' => true
     = csrf_meta_tags
-    link[rel="shortcut icon" href="/assets/triangle/ico/favicon.ico"]
-    link[rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/triangle/ico/apple-touch-icon-144-precomposed.png"]
-    link[rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/triangle/ico/apple-touch-icon-114-precomposed.png"]
-    link[rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/triangle/ico/apple-touch-icon-72-precomposed.png"]
-    link[rel="apple-touch-icon-precomposed" href="/assets/triangle/ico/apple-touch-icon-57-precomposed.png"]
+    link[rel="shortcut icon" href=image_path("triangle/ico/favicon.ico")]
+    link[rel="apple-touch-icon-precomposed" sizes="144x144" href=image_path("triangle/ico/apple-touch-icon-144-precomposed.png")]
+    link[rel="apple-touch-icon-precomposed" sizes="114x114" href=image_path("triangle/ico/apple-touch-icon-114-precomposed.png")]
+    link[rel="apple-touch-icon-precomposed" sizes="72x72" href=image_path("triangle/ico/apple-touch-icon-72-precomposed.png")]
+    link[rel="apple-touch-icon-precomposed" href=image_path("triangle/ico/apple-touch-icon-57-precomposed.png")]
     = render partial: 'shared/mixpanel'
   body
     header#header
@@ -22,7 +22,7 @@ html[lang="en"]
         .container
           .navbar-header
             h1
-              img#logo[src="/assets/triangle/logo.png" alt="logo"]
+              img#logo[src=image_path("triangle/logo.png")]
           .collapse.navbar-collapse
             = render partial: 'shared/landing/navigation'
     
