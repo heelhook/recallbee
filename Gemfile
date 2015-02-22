@@ -80,3 +80,5 @@ group :development, :test do
 end
 
 gem 'jquery-smooth-scroll-rails', git: 'https://github.com/gretel/jquery-smooth-scroll-rails'
+
+gem 'rack-tracker'

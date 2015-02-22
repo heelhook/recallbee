@@ -30,5 +30,11 @@ module Recallbee
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.middleware.use(Rack::Tracker) do
+      handler :google_analytics, {
+        tracker: Rails.application.secrets.google_analytics,
+      }
+    end
   end
 end
