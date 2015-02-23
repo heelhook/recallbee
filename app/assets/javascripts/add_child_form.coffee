@@ -3,9 +3,13 @@ $ ->
     $('#new-child.modal #first-name').focus()
 
   $('#new-child.modal form').on 'ajax:send', (e) ->
+    name = $('#new-child.modal form #child_name').val()
     e.target.reset()
-    mixpanel.track('Created New Child')
-    mixpanel.people.increment('Child Count')
+    if name?
+      mixpanel.track('Created New Child')
+      mixpanel.people.increment('Child Count')
+      mixpanel.people.set "$child_name": name
+      mixpanel.people.append '$children_names', name
 
   $('#new-child.modal form #child_name').on 'blur', (e) ->
     name = $('#new-child.modal form #child_name').val()
