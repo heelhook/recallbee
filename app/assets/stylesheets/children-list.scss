@@ -17,14 +17,24 @@
       }
     }
 
-    .intro {
-      background: #F7F8FB;
-      border: 1px solid #EAEDF7;
-      border-radius: 8px;
-      box-shadow: inset rgba(100, 100, 100, 0.25) 0 1px 1px;
-      padding: 20px 30px;
-      margin: 0 auto;
-      margin-top: 35px;
+    &.empty {
+      .intro {
+        margin: 0 auto;
+        margin-top: 35px;
+        margin-left: 172px;
+      }
+
+      &.male {
+        background: url(/assets/stock/baby2.jpg) white no-repeat 0% 100%;
+      }
+
+      &.female {
+        background: url(/assets/stock/girl1.jpg) white no-repeat 0% 100%;
+      }
+
+      .toy-list {
+        opacity: 0;
+      }
     }
   }
 

@@ -24,24 +24,36 @@ class Sync.ToyItem extends Sync.View
   beforeInsert: ($el) ->
     $el.hide()
     @insert($el)
-    $el.parents('.child.box').find('.intro').hide()
+    child_box = $el.parents('.child.box')
+    child_box.find('.intro').hide()
+    child_box.removeClass('empty')
 
   afterInsert: ->
+    update_button(@$el)
     @$el.fadeIn 'slow', =>
       update_toy_count(@$el)
-      $.smoothScroll
-        scrollTarget: $el
 
   beforeRemove: ->
+    update_button(@$el)
     @$el.fadeOut 'slow', =>
       @remove()
-      @update_toy_count($el)
+      update_toy_count(@$el)
+    
+  update_toy_count = ($el) ->
     child_box = $el.parents('.child.box')
+    toy_count = child_box.find('.toy-list .list-group-item').length
+    string = if toy_count == 1 then "1 toy" else "#{toy_count} toys"
+    child_box.find('h3 .note span[data-role="count"]').text(string)
+
+  update_button = ($el) ->
+    child_box = $el.parents('.child.box')
+    btn = child_box.find('a[data-role="new-toy"]')
+
     if child_box.find('.toy-list .list-group-item').length is 0
       child_box.find('.intro').removeClass('hidden')
-
-@update_toy_count = ($el) ->
-  child_box = $el.parents('.child.box')
-  toy_count = child_box.find('.toy-list .list-group-item').length
-  string = if toy_count == 1 then "1 toy" else "#{toy_count} toys"
-  child_box.find('h3 .note span[data-role="count"]').text(string)
+      child_box.addClass('empty')
+      name = btn.data().childname
+      btn_text = "Add #{name}'s first toy"
+    else
+      btn_text = "Add another toy"
+    btn.text(btn_text)
