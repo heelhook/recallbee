@@ -7,7 +7,7 @@ module NewsletterSubscribable
   end
 
   def subscribe_to_mailchimp
-    return true if !defined?(Rails.configuration.mailchimp) || email.blank?
+    return true if !Rails.configuration.try(:mailchimp) || email.blank?
 
     begin
       response = Rails.configuration.mailchimp.lists.subscribe({
