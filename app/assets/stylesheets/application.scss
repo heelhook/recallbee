@@ -19,6 +19,16 @@
  *= require_self
  */
 
+a.navbar-brand {
+  margin: 0px;
+  padding: 0px;
+
+  img {
+    height: 30px;
+    margin-top: -5px;
+  }
+}
+
 a.btn-social { margin-right: 10px; }
 
 .navbar.normal .navbar-collapse .navbar-nav {

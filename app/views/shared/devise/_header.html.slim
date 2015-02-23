@@ -2,5 +2,6 @@
   .container-fluid
     .navbar-header
       h1
-        img#logo[src=image_path("triangle/logo.png")]
+        a[href=root_path]
+          = image_tag 'logo.png', alt: 'RecallBee', id: 'logo'
     .collapse.navbar-collapse
