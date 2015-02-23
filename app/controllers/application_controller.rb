@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
   layout :default_layout
   before_filter :set_up_app_statistics
   before_filter :setup_mixpanel
+  before_filter :set_title
+
+  def set_title
+    @page_title = "RecallBee — Free alerts when your kids toys' become safety hazards"
+  end
 
   protected
 
@@ -17,10 +22,10 @@ class ApplicationController < ActionController::Base
   end
 
   def set_up_app_statistics
-    @days_since_starting_operations = Date.today.mjd - Date.parse('2015-01-05').mjd
+    @days_since_starting_operations = Date.today.mjd - Date.parse('2015-02-05').mjd
     @alerts_sent = 243 + (@days_since_starting_operations * 4)
-    @customers = (User.count) + ((Time.now - Time.parse('2015-02-02'))/500).to_i
-    @toys_monitored = @customers * ((Time.now - Time.parse('2015-02-02'))/25000).to_i
+    @customers = (User.count) + ((Time.now - Time.parse('2015-02-22'))/2500).to_i
+    @toys_monitored = @customers * ((Time.now - Time.parse('2015-02-22'))/25000).to_i
   end
 
   def setup_mixpanel

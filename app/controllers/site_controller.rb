@@ -6,6 +6,8 @@ class SiteController < ApplicationController
       "Alerts when your kids’ toys become safety hazards",
       "Free alerts when your kids’ toys become safety hazards"
     )
+
+    @page_title = "Free alerts when your kids toys' become safety hazards"
   end
 
   def about
@@ -23,6 +25,8 @@ class SiteController < ApplicationController
     @child.toys = [
       Toy.new(name: 'Toy 1'),
     ]
+
+    @page_title = "How to keep children safe from dangerous toys"
 
     @skip_footer = true
   end
