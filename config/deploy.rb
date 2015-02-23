@@ -36,6 +36,8 @@ set :assets_roles, [:web, :app]
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+set :linked_files, %w{config/database.yml config/sync.yml}
+
 namespace :sync do
   desc 'Copy sync.yml file'
   task :setup do
@@ -46,13 +48,11 @@ namespace :sync do
       upload! StringIO.new(content), shared_path.join('config/sync.yml')
     end
   end
-
-  task :sync_symlink do
-    set :linked_files, fetch(:linked_files, []).push(shared_path.join('config/sync.yml'))
-  end
-  after "deploy:started", "sync:sync_symlink"
 end
 
+task :setup do
+  invoke "sync:setup"
+end
 
 namespace :deploy do
   after :restart, :clear_cache do
@@ -64,4 +64,30 @@ namespace :deploy do
     end
   end
 
+end
+
+namespace :deploy do
+  namespace :assets do
+
+    Rake::Task['deploy:assets:precompile'].clear_actions
+
+    desc 'Precompile assets locally and upload to servers'
+    task :precompile do
+      on roles(fetch(:assets_roles)) do
+        run_locally do
+          with rails_env: fetch(:rails_env) do
+            execute 'bin/rake assets:precompile'
+          end
+        end
+
+        within release_path do
+          with rails_env: fetch(:rails_env) do
+            upload!('./public/assets/', "#{shared_path}/public/", recursive: true)
+          end
+        end
+
+        run_locally { execute 'rm -rf public/assets' }
+      end
+    end
+  end
 end
