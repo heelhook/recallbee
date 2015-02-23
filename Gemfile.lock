@@ -13,6 +13,13 @@ GIT
     jquery-smooth-scroll-rails (0.0.4)
       railties (~> 4.0)
 
+GIT
+  remote: https://github.com/heelhook/gendered.git
+  revision: 2b739a764eb3a4ed54be5dd82a65f0c8bd8e3f1c
+  specs:
+    gendered (0.0.7)
+      http (>= 0.6.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -133,8 +140,6 @@ GEM
     form_data (0.1.0)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
-    gendered (0.0.5)
-      http (>= 0.6.2)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
     hashie (3.3.2)
@@ -344,7 +349,7 @@ DEPENDENCIES
   faye
   font-awesome-rails
   friendly_id (~> 5.1.0)
-  gendered
+  gendered (~> 0.0.7)!
   gibbon!
   jbuilder (~> 2.0)
   jquery-rails

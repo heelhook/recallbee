@@ -51,7 +51,7 @@ gem 'sync'
 
 gem 'pundit'
 
-gem 'gendered'
+gem 'gendered', '~> 0.0.7', git: 'https://github.com/heelhook/gendered.git'
 
 gem 'mixpanel-ruby'
 
