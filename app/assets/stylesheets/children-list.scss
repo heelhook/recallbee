@@ -25,11 +25,11 @@
       }
 
       &.male {
-        background: url(/assets/stock/baby2.jpg) white no-repeat 0% 100%;
+        background: image-url("stock/baby2.jpg") white no-repeat 0% 100%;
       }
 
       &.female {
-        background: url(/assets/stock/girl1.jpg) white no-repeat 0% 100%;
+        background: image-url("stock/girl1.jpg") white no-repeat 0% 100%;
       }
 
       .toy-list {
