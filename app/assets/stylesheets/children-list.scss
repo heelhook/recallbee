@@ -1,14 +1,13 @@
 #children-list {
   .child {
+    padding: 0px;
+
     h3 {
       color: #3b88b6;
       border-bottom: solid 1px #ededed;
-      margin: 0px -50px 40px -50px;
-      padding-bottom: 10px;
-      padding-left: 50px;
-      padding-right: 50px;
+      padding: 20px;
 
-      .note {
+      .toy-count {
         float: right;
         font-size: 0.6em;
         color: #888888;
@@ -17,23 +16,60 @@
       }
     }
 
+    .box-contents {
+      margin: 0;
+      padding: 20px 40px;
+      padding-left: 250px;
+      min-height: 300px;
+      background: white no-repeat 0% 100%;
+
+      .toy-list {
+        min-height: 175px;
+        max-height: 400px;
+        overflow: auto;
+      }
+
+      .intro { display: none; }
+    }
+
+    .buttons {
+      text-align: center;
+
+      a { width: 100%; }
+    }
+
     &.empty {
-      .intro {
-        margin: 0 auto;
-        margin-top: 35px;
-        margin-left: 172px;
+      .toy-count { display: none; }
+
+      .buttons {
+        text-align: left;
+        margin-top: 25px;
       }
 
-      &.male {
-        background: image-url("stock/baby2.jpg") white no-repeat 0% 100%;
-      }
+      .toy-list { display: none; }
 
-      &.female {
-        background: image-url("stock/girl1.jpg") white no-repeat 0% 100%;
+      .intro { display: block; }
+
+      h1 { margin-top: 0px; }
+    }
+
+    &.male {
+      .box-contents {
+        min-height: 255px;
       }
 
       .toy-list {
-        opacity: 0;
+        min-height: 150px;
+      }
+
+      .box-contents {
+        background-image: image-url("stock/baby2.jpg");
+      }
+    }
+
+    &, &.female {
+      .box-contents {
+        background-image: image-url("stock/girl1.jpg");
       }
     }
   }
@@ -46,7 +82,6 @@
   }
 
   .toy-list {
-    margin-top: 40px;
     border-radius: 5px;
 
     >.list-group .list-group-item {

@@ -1,10 +1,16 @@
 $ ->
   $('#new-child.modal').on 'shown.bs.modal', (e) ->
-    $('#new-child.modal #first-name').focus()
+    $('#new-child.modal #child_name').focus()
+
+  $('#new-child.modal input').on 'keypress', (e) ->
+    if e.which == 13
+      $(e.target).parents('form').submit()
+      return false
 
   $('#new-child.modal form').on 'ajax:send', (e) ->
     name = $('#new-child.modal form #child_name').val()
     e.target.reset()
+    $('#new-child.modal').modal('hide')
     if name?
       mixpanel.track('Created New Child')
       mixpanel.people.increment('Child Count')

@@ -50,7 +50,6 @@ class Sync.ToyItem extends Sync.View
     btn = child_box.find('a[data-role="new-toy"]')
 
     if child_box.find('.toy-list .list-group-item').length is 0
-      child_box.find('.intro').removeClass('hidden')
       child_box.addClass('empty')
       name = btn.data().childname
       btn_text = "Add #{name}'s first toy"
