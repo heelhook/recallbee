@@ -4,6 +4,8 @@ class Toy < ActiveRecord::Base
 
   delegate :id, to: :parent, prefix: true, allow_nil: true
 
+  validates :name, presence: true
+
   sync :all
   sync_scope :by_child, -> (child) { where(child_id: child.id) }
 end
