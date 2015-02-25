@@ -1,0 +1,15 @@
+.modal.transparent {
+  .modal-content {
+    background: transparent;
+    box-shadow: none;
+    border: none;
+
+    h1, h2, h3, h4 {
+      color: white;
+      font-family: Helvetica;
+      letter-spacing: 1px;
+      text-shadow: 0px 2px 2px black;
+      text-align: center;
+    }
+  }
+}

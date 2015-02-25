@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150224131018) do
+ActiveRecord::Schema.define(version: 20150225163550) do
 
   create_table "authentication_providers", force: :cascade do |t|
     t.string   "name"
@@ -34,10 +34,16 @@ ActiveRecord::Schema.define(version: 20150224131018) do
     t.integer  "child_id"
     t.string   "name"
     t.string   "added_via"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.string   "status",     default: "pending"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.string   "status",             default: "pending"
     t.string   "maker"
+    t.string   "image"
+    t.string   "upc"
+    t.string   "descriptions"
+    t.integer  "minimum_age_months"
+    t.integer  "maximum_age_months"
+    t.string   "provider"
   end
 
   add_index "toys", ["child_id"], name: "index_toys_on_child_id"

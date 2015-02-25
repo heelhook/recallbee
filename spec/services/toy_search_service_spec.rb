@@ -1,0 +1,3 @@
+describe ToySearchService do
+  
+end

@@ -32,17 +32,37 @@
         a.create.btn.btn-micro.btn-gray[href='#' data-dismiss="modal"] Cancel
         a.create.btn.btn-micro[href='#' data-dismiss="modal" data-form="new_child" data-role="submit"] Done! Let's go!
 
-#new-toy.modal.fade
+#new-toylist.modal.fade.transparent
   .modal-dialog.modal-lg
     .modal-content
-      .modal-header
-        h4.modal-title
-          span[data-role="child-name"]
-          | 's New Toy
+      h2
+        | Select a few toys to kickstart 
+        span[data-role="child-name"] Karen
+        | 's toylist
+      h4
+        | (don't worry, you'll be able to change this later)
 
-      .modal-body
-        = render partial: 'shared/add_toy_form'
+      .row.toylist.isotope
+        - @toy_suggestions.each do |gender, toys|
+          - toys.each do |toy|
+            a.col-md-3.isotope-item[href='#' data-name=toy.name data-maker=toy.maker class=gender]
+              span.image
+                img[src=toy.image]
+              span.toy-name= toy.name
 
-      .modal-footer
-        a.create.btn.btn-micro.btn-gray[href='#' data-dismiss="modal"] Cancel
-        a.create.btn.btn-micro[href='#' data-dismiss="modal" data-form="new_toy" data-role="submit"] Done! Let's go!
+
+#new-toy.modal.fade.transparent
+  .modal-dialog.modal-lg
+    .modal-content
+      h4.modal-title
+        span[data-role="child-name"]
+        | 's New Toy
+
+      = render partial: 'shared/add_toy_form'
+
+      a.create.btn.btn-micro.btn-gray[href='#' data-dismiss="modal"] Cancel
+      a.create.btn.btn-micro[href='#' data-dismiss="modal" data-form="new_toy" data-role="submit"] Done! Let's go!
+
+coffee:
+  $ ->
+    $('#new-toylist').modal('show')

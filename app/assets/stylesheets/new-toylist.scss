@@ -1,0 +1,45 @@
+@import "react/modules/mixins";
+
+.toylist {
+  .isotope-item {
+    text-align: center;
+    text-decoration: none;
+    padding: 20px;
+
+    span.image {
+      display: block;
+      min-width: 150px;
+      min-height: 150px;
+      padding: 20px 10px;
+      background-color: white;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 5px solid white;
+      @include transition(all linear .2s);
+
+      img {
+        max-width: 150px;
+        max-height: 150px;
+      }
+    }
+
+    span.toy-name {
+      max-height: 42px;
+      display: block;
+      color: white;
+      font-weight: bold;
+      @include transition(all linear .2s);
+    }
+
+    &.selected {
+      span.image {
+        @include box-shadow(0, 0, 40px, #5397ff, inherit);
+        border-color: #5397ff;
+      }
+
+      span.toy-name {
+        color: #5397ff;
+      }
+    }
+  }
+}

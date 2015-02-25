@@ -1,7 +1,23 @@
 .form
-  = form_for @toy, remote: true do |f|
-    = f.hidden_field :child_id, 'data-role' => 'child-id'
-    .row
-      .col-md-6
+  .row
+    .col-md-5.info.suggestions
+      h4
+        | Want some ideas?
+        br
+        span.note
+          | (you can always change this later)
+
+      ul
+        - @toy_suggestions.each do |gender, toys|
+          - toys.each do |toy|
+            li[class=gender]
+              a[href='#' data-name=toy.name data-maker=toy.maker]= toy.name
+    .col-md-7
+      = form_for @toy, remote: true do |f|
+        = f.hidden_field :child_id, 'data-role' => 'child-id'
         .form-group
+          label.control-label Toy Name
           = f.text_field :name, class: 'form-control', autofocus: true, placeholder: "Toy Name"
+        .form-group
+          label.control-label Brand or Manufacturer
+          = f.text_field :maker, class: 'form-control', autofocus: true, placeholder: "Brand or Manufacturer"
