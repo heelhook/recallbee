@@ -1,0 +1,17 @@
+@import "react/partials/config";
+@import "react/modules/mixins";
+
+.boxed section.alerts {
+  .alert.box {
+    h2:not(.label), h3 { color: #3B88B6; }
+
+    .action {
+      margin-top: 20px;
+      text-align: right;
+
+      h2.label {
+        font-size: 1.75em;
+      }
+    }
+  }
+}

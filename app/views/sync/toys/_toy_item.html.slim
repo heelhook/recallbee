@@ -1,8 +1,3 @@
-li.list-group-item
-  = toy.name
-  - case toy.status
-  - when 'pending'
-    .status
-      span.glyphicon.glyphicon-zoom-in
-      span.analyzing  Analyzing
-
+.toy
+  = image_tag toy.image
+  span.title= toy.name

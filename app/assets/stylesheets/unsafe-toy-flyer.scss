@@ -1,0 +1,42 @@
+@import "react/partials/config";
+@import "react/modules/mixins";
+
+#unsafe-toy-flyer {
+  color: white;
+  .modal-content {
+    h3, h4 { text-align: left; }
+  }
+
+  .header {
+    margin-bottom: 60px;
+  }
+
+  .row { margin-bottom: 40px; }
+
+  .stats {
+    h3 {
+      font-size: 3em;
+      color: #FFA22C;
+      margin: 0px;
+      font-family: $roboto;
+    }
+
+    h4 {
+      font-size: 2em;
+      text-align: right;
+    }
+
+    .row { margin-bottom: 15px; }
+  }
+
+  .modal-footer {
+    text-align: center;
+    border-top: 0px;
+
+    .btn.btn-primary {
+      @include background-gradient(#ffc200, #ff7e00);
+      color: white;
+      text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 0px;
+    }
+  }
+}

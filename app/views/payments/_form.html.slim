@@ -1,0 +1,24 @@
+= form_tag do
+  = hidden_field_tag 'user_email', current_user.try(:email)
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+  p.form
+    span I believe 
+    select#amount-of-subscription[name="plan"]
+      option[value="2.50-mo"] $2.50/mo
+      option[value="5-mo"] $5/mo
+      option[value="10-mo" selected="selected"] $10/mo
+      option[value="15-mo"] $15/mo
+      option[value="20-mo"] $20/mo
+      option[value="25-mo"] $25/mo
+      option[value="30-mo"] $30/mo
+      option[value="50-mo"] $50/mo
+      option[value="100-mo"] $100/mo
+    span  is a fair price.
+
+p
+  a.btn.btn-success#stripe-subscribe-button[href="#"]
+    i.fa.fa-lock
+    |  Help keep kids safe
+p
+  span.note
+    | * You can stop this subscription at any time.

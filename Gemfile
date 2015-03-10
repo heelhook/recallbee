@@ -77,8 +77,16 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'rspec-rails'
 end
 
 gem 'jquery-smooth-scroll-rails', git: 'https://github.com/gretel/jquery-smooth-scroll-rails'
 
 gem 'rack-tracker'
+
+gem 'vacuum'
+gem 'semantics3'
+gem 'recursive-open-struct'
+
+gem 'stripe'

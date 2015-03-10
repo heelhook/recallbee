@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   has_many :children, foreign_key: :parent_id, dependent: :destroy
   has_many :toys, through: :children
   has_many :authentications, class_name: 'UserAuthentication', dependent: :destroy
+  has_many :alerts, through: :children
+  has_many :acknowledged_alerts, through: :children
+  has_many :unacknowledged_alerts, through: :children
 
   devise :omniauthable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :omniauthable

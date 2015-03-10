@@ -2,12 +2,9 @@
 #= require jquery_ujs
 #= require jquery-smooth-scroll
 #= require twitter/bootstrap
+#= require react/theme
 #= require turbolinks
-#= require onboarding
-#= require add_child_form
-#= require add_toy_form
 #= require sync
-#= require dashboard
 #= require_self
 
 # Submit buttons outside of their form

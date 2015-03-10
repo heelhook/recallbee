@@ -5,9 +5,14 @@ class ApplicationController < ActionController::Base
   before_filter :set_up_app_statistics
   before_filter :setup_mixpanel
   before_filter :set_title
+  before_filter :set_show_alert_demo
 
   def set_title
     @page_title = "RecallBee — Free alerts when your kids toys' become safety hazards"
+  end
+
+  def set_show_alert_demo
+    @show_alert_demo = !current_user.has_seen_alert_demo unless current_user.nil?
   end
 
   protected

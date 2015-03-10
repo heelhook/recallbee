@@ -1,14 +1,79 @@
-#= require new-toylist
+#= require add_child_form
+#= require add_toy_form
+#= require unsafe-toy-flyer
+#= require next-actions
+#= require payments
+
+$ ->
+  show_demo_hint()
+
+  $('body').on 'click', '.child.box .box-contents img#psst', (e) -> $(e.target).fadeOut(1000)
+
+  $('body').on 'click', '.child.box .box-contents a[data-role="unsafe-demo"]', (e) ->
+    activate_demo($(e.target).parents('.child.box'))
+
+  $('body').on 'click', '.sidebar a[data-role="unsafe-demo"]', (e) ->
+    $.smoothScroll
+      scrollTarget: '#children-list .child:first'
+
+    $('.child.box .box-contents a[data-role="unsafe-demo"]')[0].click()
+    return false
+
+  $('body').on 'click', '.sidebar a[data-target="#next-actions-flyer"]', (e) ->
+    href = $(e.target).parents('a').attr('href')
+    $("#next-actions-flyer .actions .action[href='#{href}'] h4").click()
+
+  $('body').on 'new_toys', '.child.box', (e, toy_count) ->
+    child_box = $(e.target)
+    if child_box.hasClass('empty')
+      child_box.find('.safe').hide()
+      child_box.find('.empty').fadeOut 'slow', =>
+        child_box
+          .removeClass('empty')
+          .addClass('safe')
+        child_box.find('.safe').fadeIn('slow')
+        show_demo_hint()
+
+    update_toy_count(child_box, toy_count)
+
+activate_demo = (child_box) ->
+  child_id = child_box.data().childid
+  child_name = child_box.data().childname
+
+  $('.child.box .box-contents img#psst').fadeOut 250, =>
+    child_box.find('.safe').slideUp =>
+      $('#unsafe-toy-flyer [data-role="child_name"]').text(child_name)
+      $('#unsafe-toy-flyer').modal('show')
+      child_box.removeClass('safe')
+      child_box.find('.unsafe').hide()
+      child_box.addClass('unsafe')
+      child_box.find('.unsafe').slideDown()
+
+
+  $.ajax
+    url: "/children/#{child_id}/alerts/setup_demo"
+    method: 'post'
+
+  return false
+
+update_toy_count = (child_box, toy_count) ->
+  string = if toy_count == 1 then "1 toy" else "#{toy_count} toys"
+  child_box.find('h3 .note span[data-role="count"]').text(string)    
+
+show_demo_hint = ->
+  setTimeout ->
+    $('.child.box:not(.empty) .box-contents img#psst').fadeIn 1000
+  , 2000
 
 class Sync.ChildDashboardItem extends Sync.View
 
   beforeInsert: ($el) ->
     $el.hide()
-    @insert($el)
-    $('#welcome-box').hide()
+    $('#welcome-box').slideUp =>
+      @insert($el)
 
   afterInsert: ->
-    @$el.fadeIn 'slow', =>
+    @$el.slideDown 'slow', =>
       $.smoothScroll
         scrollTarget: '#children-list .child:last'
 
@@ -16,41 +81,3 @@ class Sync.ChildDashboardItem extends Sync.View
     @$el.fadeOut 'slow', => @remove()
     if $('#children-list .child').length is 0
       $('#welcome-box').removeClass('hidden')
-
-class Sync.ToyItem extends Sync.View
-
-  beforeInsert: ($el) ->
-    $el.hide()
-    @insert($el)
-    child_box = $el.parents('.child.box')
-    child_box.find('.intro').hide()
-    child_box.removeClass('empty')
-
-  afterInsert: ->
-    update_button(@$el)
-    @$el.fadeIn 'slow', =>
-      update_toy_count(@$el)
-
-  beforeRemove: ->
-    update_button(@$el)
-    @$el.fadeOut 'slow', =>
-      @remove()
-      update_toy_count(@$el)
-    
-  update_toy_count = ($el) ->
-    child_box = $el.parents('.child.box')
-    toy_count = child_box.find('.toy-list .list-group-item').length
-    string = if toy_count == 1 then "1 toy" else "#{toy_count} toys"
-    child_box.find('h3 .note span[data-role="count"]').text(string)
-
-  update_button = ($el) ->
-    child_box = $el.parents('.child.box')
-    btn = child_box.find('a[data-role="new-toy"]')
-
-    if child_box.find('.toy-list .list-group-item').length is 0
-      child_box.addClass('empty')
-      name = btn.data().childname
-      btn_text = "Add #{name}'s first toy"
-    else
-      btn_text = "Add another toy"
-    btn.text(btn_text)

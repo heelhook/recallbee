@@ -1,12 +1,12 @@
-.child.box[data-child-id=child.id class="#{child.gender} #{child.toys.empty? ? 'empty' : ''}"]
+.child.box[data-childname=child.name data-childid=child.slug data-childgender=child.gender class="#{DashboardItemPresenter.determine_class(child, @show_alert_demo)}"]
   h3
     | #{child.name}'s Toys
     .note.toy-count
-      | RecallBee is tracking 
+      | We are tracking 
       span[data-role="count"]  #{pluralize child.toys.count, 'toy'}
 
   .box-contents
-    .intro
+    .empty
       - case rand(2)
       - when 0
         h1 Great!
@@ -22,12 +22,27 @@
 
       p Let's add #{child.pronoun} first toy. Just click the button below.
 
-    .panel.panel-default.toy-list
-      ul.list-group
-        = sync partial: 'toy_item', collection: child.toys
-        = sync_new partial: 'toy_item', resource: Toy.new, scope: Toy.by_child(child)
+    .status.safe
+      h1 All tracked toys are safe!
+      a.note[href=child_toys_path(child)] What toys am I tracking?
 
-    .buttons
-      a.btn.btn-primary[type="button" data-toggle="modal" data-target='#new-toylist' data-role="new-toy" data-childname=child.name data-childid=child.id data-childgender=child.gender]
+    .status.unsafe
+      h1.unsafe Attention required!
+      a.note[href='#'] Some of #{child.name}'s toys have safety concerns!
+
+    .buttons.empty
+      a.btn.btn-primary[type="button" data-role="new-toy"]
         span.glyphicon.glyphicon-plus
         |  Add #{child.name}'s first toy
+
+    .buttons.safe
+      .demo
+        a.btn.btn-primary[href='#' data-role="unsafe-demo"] What happens when a toy is unsafe?
+        = image_tag 'psstdemo.png', id: 'psst'
+      - unless @show_alert_demo
+        a.btn.btn-primary[type="button" data-role="new-toy"]
+          span.glyphicon.glyphicon-plus
+          |  Add more toys
+
+    .buttons.unsafe
+      a.btn.btn-primary[href=child_alerts_path(child)] Read More & Take Action

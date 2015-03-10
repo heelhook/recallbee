@@ -1,0 +1,56 @@
+.row
+  .col-md-12
+    .alert.box
+      = form_for alert, method: :delete do |f|
+        h2.title #{alert.toy.name}
+        h3
+          | Manufacturer's suggestion: 
+          - alert.report.remedy_types.each do |remedy|
+            span.label.label-primary= remedy.titleize
+        h5
+          | Recalled on #{alert.report.recall_date.strftime('%A %d %B, %Y')} 
+          | (#{distance_of_time_in_words_to_now(alert.report.recall_date)} ago)
+
+        .row
+          .col-md-3
+            = image_tag alert.toy.image, class: 'col-md-12'
+          .col-md-9
+            .row
+              .col-md-12
+                h2 Hazard
+                p= alert.report.hazard
+
+            a.btn.btn-gray.btn-ouline[href="#moreinformation" data-toggle="collapse"] More Information
+            #moreinformation.collapse
+              .row
+                .col-md-6
+                  h3 Incidents Reported
+                  p= alert.report.incidents_reported
+
+                .col-md-6
+                  h3 Remedy
+                  p= alert.report.remedy
+
+              .row
+                .col-md-6
+                  h3 Contact Information
+                  p= alert.report.consumer_contact
+
+                .col-md-6
+                  h3 Sold at
+                  p= alert.report.sold_at
+                  p #{alert.report.units_sold} units sold
+
+        .row
+          .action
+            - if !alert.acknowledged?
+              button.btn.btn-warning[data-confirm="We are going to mark this alert as taken care of, is #{@child.name} safe from this faulty toy?" type="submit"]
+                span.fa.fa-check
+                |  Ok, I have taken care of this
+            - else
+              p
+                h2.label.label-success
+                  span.fa.fa-check
+                  |  You acknowledged this alert #{distance_of_time_in_words_to_now(alert.acknowledged_on)} ago
+            |  
+            a.btn.btn-default[href=dashboard_path] &laquo; Back to Dashboard

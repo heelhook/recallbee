@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150225163550) do
+ActiveRecord::Schema.define(version: 20150310092010) do
+
+  create_table "alerts", force: :cascade do |t|
+    t.integer  "child_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "report_id"
+    t.datetime "acknowledged_on"
+  end
+
+  add_index "alerts", ["child_id"], name: "index_alerts_on_child_id"
 
   create_table "authentication_providers", force: :cascade do |t|
     t.string   "name"
@@ -28,10 +38,43 @@ ActiveRecord::Schema.define(version: 20150225163550) do
     t.datetime "updated_at", null: false
     t.string   "gender"
     t.date     "birthday"
+    t.string   "slug"
   end
 
-  create_table "toys", force: :cascade do |t|
+  add_index "children", ["slug"], name: "index_children_on_slug", unique: true
+
+  create_table "toy_ownerships", force: :cascade do |t|
+    t.integer  "toy_id"
     t.integer  "child_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "toy_ownerships", ["child_id"], name: "index_toy_ownerships_on_child_id"
+  add_index "toy_ownerships", ["toy_id"], name: "index_toy_ownerships_on_toy_id"
+
+  create_table "toy_reports", force: :cascade do |t|
+    t.integer  "toy_id"
+    t.string   "source"
+    t.string   "recall_number"
+    t.date     "recall_date"
+    t.text     "hazard"
+    t.text     "remedy"
+    t.text     "description"
+    t.text     "sold_at"
+    t.string   "remedy_types"
+    t.string   "importer"
+    t.string   "manufactured_in"
+    t.text     "consumer_contact"
+    t.text     "incidents_reported"
+    t.string   "units_sold"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "toy_reports", ["toy_id"], name: "index_toy_reports_on_toy_id"
+
+  create_table "toys", force: :cascade do |t|
     t.string   "name"
     t.string   "added_via"
     t.datetime "created_at",                             null: false
@@ -45,8 +88,6 @@ ActiveRecord::Schema.define(version: 20150225163550) do
     t.integer  "maximum_age_months"
     t.string   "provider"
   end
-
-  add_index "toys", ["child_id"], name: "index_toys_on_child_id"
 
   create_table "user_authentications", force: :cascade do |t|
     t.integer  "user_id"
@@ -79,6 +120,8 @@ ActiveRecord::Schema.define(version: 20150225163550) do
     t.text     "last_name"
     t.text     "image"
     t.boolean  "subscribed_to_mailchimp", default: false
+    t.boolean  "has_seen_alert_demo",     default: false
+    t.string   "stripe_token"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -6,7 +6,8 @@ section#how-it-works {
 
   h1.title {
     font-weight: bold;
-    color: #1887b9;
+    color: #FFA22C;
+    text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 0px;
   }
 
   h2.subtitle {
@@ -14,11 +15,22 @@ section#how-it-works {
     line-height: 1.25em;
   }
 
+  h2.cta {
+    font-weight: bold;
+  }
+
   h2 {
-    .note {
+    &.note, .note {
       font-size: 20px;
       line-height: 1.5em;
     }
+  }
+
+  span.input-icon {
+    font-size: 24px;
+    color: #A0A0A0;
+    position: relative;
+    left: 30px;
   }
 
   input[type="text"], input[type="email"] {
@@ -32,6 +44,8 @@ section#how-it-works {
     text-align: center;
     line-height: 1.5em;
     width: 500px;
+
+    &.icon { padding: 5px 40px; }
   }
 
   #page-container {
@@ -39,10 +53,23 @@ section#how-it-works {
     margin-bottom: 50px;
   }
 
-  .stats { background: none; }
+  .full-hero { background: none; }
+
+  .stats {
+    h1 {
+      color: #FFBA16;
+      font-weight: bold;
+    }
+
+    h3 {
+      font-size: 20px;
+      font-weight: bold;
+      color: #999999;
+    }
+  }
 
   a.btn-register {
-    margin-top: 50px;
+    margin-top: 20px;
   }
 }
 

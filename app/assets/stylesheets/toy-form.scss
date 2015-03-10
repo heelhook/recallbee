@@ -1,12 +1,128 @@
-#new-toy.modal {
-  .suggestions {
-    ul {
-      padding-left: 5px;
-      
-      li {
-        list-style: none;
-        margin: 0px;
+@import "react/modules/mixins";
+
+.toylist {
+  .isotope-item {
+    float: left;
+  }
+}
+
+.toylist.grid {
+  .isotope-item {
+    text-align: center;
+    text-decoration: none;
+    padding: 20px;
+    width: 20%;
+
+    span.image {
+      display: block;
+      min-width: 50px;
+      min-height: 50px;
+      padding: 20px 10px;
+      background-color: white;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 5px solid white;
+      float: left;
+      @include transition(all linear .2s);
+
+      img {
+        max-width: 50px;
+        max-height: 50px;
       }
+    }
+
+    span.toy-name {
+      float: left;
+      max-height: 42px;
+      display: block;
+      color: white;
+      font-weight: bold;
+      @include transition(all linear .2s);
+    }
+
+    &.selected {
+      span.image {
+        @include box-shadow(0, 0, 40px, #5397ff, inherit);
+        border-color: #5397ff;
+      }
+
+      span.toy-name {
+        color: #5397ff;
+      }
+    }
+  }
+}
+
+.toylist.list {
+  .isotope-item {
+    text-align: center;
+    text-decoration: none;
+    padding: 20px;
+    width: 100%;
+
+    span.image {
+      display: block;
+      width: 60px;
+      height: 60px;
+      max-width: 15%;
+      padding: 3px;
+      background-color: white;
+      margin-bottom: 0px;
+      border-radius: 5px;
+      border: 5px solid white;
+      float: left;
+      @include transition(all linear .2s);
+
+      img {
+        max-width: 44px;
+        max-height: 44px;
+      }
+    }
+
+    span.toy-name {
+      float: left;
+      max-width: 85%;
+      max-height: 42px;
+      display: block;
+      color: #cccccc;
+      @include transition(all linear .2s);
+      margin-left: 30px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 24px;
+      text-align: left;
+      margin-top: 24px;
+    }
+
+    &:hover {
+      span.toy-name {
+        color: white;
+        border-bottom: 2px solid white;
+      }
+    }
+
+    &.selected {
+      span.image {
+        @include box-shadow(0, 0, 40px, #5397ff, inherit);
+        border-color: #5397ff;
+      }
+
+      span.toy-name {
+        color: #5397ff;
+        border-bottom: 2px solid #5397ff;
+      }
+    }
+  }
+}
+
+#new-toy {
+  .modal-footer {
+    text-align: center;
+
+    a.btn
+    a.btn[data-role="submit"] {
+      font-weight: bold;
+      font-size: 1.2em;
     }
   }
 }

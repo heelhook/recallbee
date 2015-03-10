@@ -1,20 +1,28 @@
 class ToysController < ApplicationController
-  enable_sync
+  before_filter :load_resources
+
+  def index
+    @toys = @child.toys
+  end
 
   def create
-    @toy = Toy.new(toy_params)
-    authorize @toy
-    @toy.save!
+    params[:toys].each do |toy_id, boolean|
+      if boolean == 'true'
+        toy_ownership = @child.toy_ownerships.new(
+          toy_id: toy_id,
+        )
+
+        authorize toy_ownership
+        toy_ownership.save!
+      end
+    end
 
     head :no_content
   end
 
   private
 
-  def toy_params
-    params.require(:toy).permit(
-      :name,
-      :child_id,
-    )
+  def load_resources
+    @child = Child.where(slug: params[:child_id]).first!
   end
 end

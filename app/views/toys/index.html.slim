@@ -1,0 +1,11 @@
+.boxed
+  section
+    .container
+      .row.header
+        .col-md-12
+          h3 #{@child.name}'s Toybox
+      .row
+        .col-md-9
+          #toys-list.box
+            = sync partial: 'toy_item', collection: @toys
+            .clear

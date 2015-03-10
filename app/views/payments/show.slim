@@ -1,0 +1,30 @@
+section.payments
+  .container
+    .row.header
+      .col-md-12
+        h2
+          | How much is worth the safety RecallBee provides to 
+          b
+            u you
+          | ?
+        p RecallBee uses a friendly pay-what-you-want pricing model
+
+    .row.form
+      .col-md-2.col-md-offset-1
+        = image_tag 'woman-icon.png'
+
+      .col-md-7.text-center.form
+        - if @stripe_subscription
+          h3
+            | Thanks!
+
+          h4
+            | You are supporting the cause of 
+            | keeping kids safe from faulty toys on the #{@stripe_subscription.plan.name} level.
+
+          p
+            = link_to "You can cancel this support at any time.", payments_path, method: 'delete', confirm: "This will cancel your support for RecallBee's mission to keep kids safe from faulty toys, are you sure you want to do that now?"
+        - else
+          p You don't currently have any active subscriptions
+
+          = render partial: 'form'

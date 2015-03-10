@@ -1,9 +1,13 @@
 /*
  *= require children-list
  *= require toy-form
+ *= require unsafe-toy-flyer
+ *= require next-actions
  *= require transparent-modal
- *= require new-toylist
+ *= require payments
  */
+@import "react/partials/config";
+@import "flyer";
 
 #welcome-box {
   background: image-url("stock/girl1.jpg") white no-repeat 0% 100%;
@@ -22,8 +26,8 @@
     float: right;
     position: absolute;
     margin-top: -70px;
-    right: 20px;
-    opacity: 0.7;
+    right: -28px;
+    opacity: 0.5;
   }
 }
 
@@ -61,3 +65,37 @@
   opacity: 0.8;
 }
 
+.sidebar {
+  ul li {
+    margin-bottom: 10px;
+
+    a, a:hover { text-decoration: none; }
+    a:hover span.text { text-decoration: underline; }
+
+    span.fa.fa-check {
+      display: none;
+      color: #009900;
+      font-size: 24px;
+    }
+
+    span.text { margin-left: 10px; }
+
+    &.done {
+      a, a:hover {
+        span.text { text-decoration: line-through; }
+        color: #aaaaaa;
+      }
+
+      img { display: none; }
+      span.fa.fa-check { display: inline; }
+      span.text { text-decoration: line-through; }
+    }
+
+    img {
+      max-width: 24px;
+      max-height: 24px;
+    }
+  }
+
+  a.btn { white-space: normal; }
+}

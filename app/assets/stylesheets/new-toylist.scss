@@ -2,28 +2,37 @@
 
 .toylist {
   .isotope-item {
+    float: left;
+  }
+}
+
+.toylist.grid {
+  .isotope-item {
     text-align: center;
     text-decoration: none;
     padding: 20px;
+    width: 20%;
 
     span.image {
       display: block;
-      min-width: 150px;
-      min-height: 150px;
+      min-width: 50px;
+      min-height: 50px;
       padding: 20px 10px;
       background-color: white;
       margin-bottom: 10px;
       border-radius: 5px;
       border: 5px solid white;
+      float: left;
       @include transition(all linear .2s);
 
       img {
-        max-width: 150px;
-        max-height: 150px;
+        max-width: 50px;
+        max-height: 50px;
       }
     }
 
     span.toy-name {
+      float: left;
       max-height: 42px;
       display: block;
       color: white;
@@ -39,6 +48,61 @@
 
       span.toy-name {
         color: #5397ff;
+      }
+    }
+  }
+}
+
+.toylist.list {
+  .isotope-item {
+    text-align: center;
+    text-decoration: none;
+    padding: 20px;
+    width: 100%;
+
+    span.image {
+      display: block;
+      width: 60px;
+      height: 60px;
+      max-width: 15%;
+      padding: 3px;
+      background-color: white;
+      margin-bottom: 0px;
+      border-radius: 5px;
+      border: 5px solid white;
+      float: left;
+      @include transition(all linear .2s);
+
+      img {
+        max-width: 44px;
+        max-height: 44px;
+      }
+    }
+
+    span.toy-name {
+      float: left;
+      max-width: 85%;
+      max-height: 42px;
+      display: block;
+      color: #dddddd;
+      @include transition(all linear .2s);
+      margin-left: 30px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      font-size: 24px;
+      text-align: left;
+      margin-top: 24px;
+    }
+
+    &.selected {
+      span.image {
+        @include box-shadow(0, 0, 40px, #5397ff, inherit);
+        border-color: #5397ff;
+      }
+
+      span.toy-name {
+        color: #5397ff;
+        border-bottom: 2px solid #5397ff;
       }
     }
   }

@@ -1,0 +1,14 @@
+.boxed
+  section.alerts
+    .container
+      .row.header
+        .col-md-12
+          h3
+            a[href=dashboard_path] &laquo; Back to the dashboard
+          h3 #{@child.name}'s Toybox's alerts
+
+      - if @alerts.any?
+        = render @alerts
+
+      - else
+        There are currently no alerts

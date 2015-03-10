@@ -1,5 +1,5 @@
 doctype html
-html
+html.csstransforms.csstransforms3d.csstransitions
   head
     meta[charset="UTF-8"]
     meta[http-equiv="X-UA-Compatible" content="IE=edge"]
@@ -7,9 +7,10 @@ html
       | RecallBee
     meta[name="viewport" content="width=device-width, initial-scale=1.0"]
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag controller_name, media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = javascript_include_tag 'react/theme', 'data-turbolinks-track' => true
     = javascript_include_tag Sync.adapter_javascript_url
+    = javascript_include_tag controller_name, 'data-turbolinks-track' => true
     = csrf_meta_tags
     link[rel="stylesheet" type="text/css" href="css/vendor/brankic.css"]
     link[rel="stylesheet" type="text/css" href="css/vendor/isotope.css"]

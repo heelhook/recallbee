@@ -1,7 +1,14 @@
 $ ->
+  $('[data-toggle="tooltip"]').tooltip()
+
   $('body').on 'click', '[data-role="navigation-next"]', (e) ->
     change_page()
     false
+
+  $('body').on 'keypress', 'input', (e) ->
+    if e.which == 13
+      change_page()
+      false
 
   $('.page[data-id="2"]').on 'next', (e) ->
     update_child_name()

@@ -1,0 +1,21 @@
+.flyer.modal {
+  .header {
+    h1 {
+      font-family: $roboto;
+      font-size: 3em;
+      font-weight: 200;
+      color: #FFA22C;
+    }
+
+    h4 {
+      font-family: $myriad;
+      font-weight: 100;
+      font-size: 1.6em;
+
+      &.cta {
+        font-weight: bold;
+        color: #FFA22C;
+      }
+    }
+  }
+}

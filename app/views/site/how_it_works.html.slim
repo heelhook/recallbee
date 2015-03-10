@@ -12,10 +12,11 @@ section#how-it-works
           h2.subtitle
             | Let's start setting up protection for one of your children.
 
-          h2 Enter one of your children's name to see this in action:
+          h2.cta What's the name of your first-born?
 
           .form
-            input#child_name[type="text" name="child_name" placeholder="Your Child's First Name" value="#{@child.name}"]
+            span.input-icon.fa.fa-lock[data-toggle="tooltip" data-placement="left" title="This information is safe!"]
+            input#child_name.icon[type="text" name="child_name" placeholder="Your Child's First Name" value="#{@child.name}"]
             br
             span.note We ask for this just to show you a real example of You + RecallBee!
 
@@ -24,21 +25,21 @@ section#how-it-works
           h1.title
             | Great!
           h2.subtitle
-            | We are now populating 
+            | We are now filling 
             span[data-role="child_name"] Pablo
-            | 's toy list with some samples.
+            | 's toybox with some popular toys!
 
-          h2
-            | While we do that, 
-            b where would we send you safety alerts?
-            .note.col-md-6.col-md-offset-3
-              | We are actually going to send you a sample alert, so double-check your email address!
+          h2.cta
+            | Where should we notify you when one of 
+            span[data-role="child_name"] Pablo
+            | 's toys is risky?
 
           .form
-            input#email[type="email" name="email" placeholder="Enter your email address" value="#{@email}"]
+            span.input-icon.fa.fa-lock[data-toggle="tooltip" data-placement="left" title="This information is safe! We never send spam; this is just to send you a sample alert."]
+            input#email.icon[type="email" name="email" placeholder="Enter your email address" value="#{@email}"]
             br
-            span.note We never send spam! This is just to send you a sample alert.
-
+            span.note
+              | We are actually going to send you a sample alert, so double-check your email address!
         .page.hidden[data-id="4"]
           h1.title
             | Perfect!
@@ -90,18 +91,20 @@ section#how-it-works
             | We are live, and free
           h2.subtitle
             | Helping hundreds of families stay safe
-          = render partial: 'shared/landing/stats'
+          .stats
+            = render partial: 'shared/landing/stats'
 
-          h2
-            .note.col-md-8.col-md-offset-2
-              | It's your turn to be able to use all available tools at your disposal to protect 
+          .row
+            h2.cta.col-md-8.col-md-offset-2
+              | It's your turn to use all available tools at your disposal to protect 
               span[data-role="child_name"] Pablo
               |  and the rest of your family.
 
-          a.btn.btn-register[href=new_user_registration_path]
-            | Start today, its free!
-          .note
-            | And it only takes a minute!
+          .row
+            a.btn.btn-register[href=new_user_registration_path]
+              | Start today, its free!
+            .note
+              | And it only takes a minute!
 
       .col-md-12.text-center
         a.btn.btn-success.btn-lg[href='#' data-role="navigation-next"]

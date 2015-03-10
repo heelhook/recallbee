@@ -1,0 +1,61 @@
+#next-actions-flyer.flyer.modal.fade.transparent
+  .modal-dialog.modal-lg
+      .modal-content
+        .header
+          h1
+            | Now that you've seen how we can be allies
+          h4.subtitle
+            | Here are a few things you can do next
+
+        .actions
+          / .action[href="#add-the-rest-of-your-family" data-id="add-the-rest-of-your-family"]
+          /   = image_tag 'gs-big-tree.png'
+          /   h4 Add the rest of your family
+          .action[href="#share-your-resourcefulness" data-id="share-your-resourcefulness"]
+            = image_tag 'gs-big-talking.png'
+            h4 Share your resourcefulness
+          .action[href="#show-your-love" data-id="show-your-love"]
+            = image_tag 'gs-big-heart.png'
+            h4 Show your love
+
+        .slides
+          #share-your-resourcefulness.slide
+            .slide-content
+              .col-md-2.col-md-offset-1
+                = image_tag 'gs-big-talking.png'
+              .col-md-8
+                h4 Share your resourcefulness
+                p
+                  | Isn't sharing beautiful? You must know other parents who would benefit from keeping their kids safe from faulty toys, why not help them out too?
+                p 
+                  b Show your love by spreading the word to keep more kids safe!
+                p
+                  a.btn.btn-micro.btn-social.btn-twitter[href='https://twitter.com/intent/tweet?text=%F0%9F%91%8F%20%23parents%20everywhere!%20check%20out%20this%20awesome%20free%20tool%20to%20keep%20%23kids%20%23safe%20from%20faulty%20%23toys%20@recallbee%20http://www.recallbee.com' target="_blank"]
+                    i.fa.fa-twitter
+                    | Here's a handy tweet to spread the word!
+                p
+                  a.btn.btn-micro.btn-social.btn-facebook[href="http://www.facebook.com/share.php?u=http://www.recallbee.com" target="_blank"]
+                    i.fa.fa-facebook
+                    | Share on Facebook
+          #show-your-love.slide
+            .slide-content
+              .col-md-2.col-md-offset-1
+                = image_tag 'gs-big-heart.png'
+              .col-md-8
+                h4 Show you care & share your love
+                p
+                  | We provide RecallBee as a pay-what-you-want service; we want it to reach as many parents as possible since we 
+                  b truly
+                  |  care about unsafe toys going unnoticed and becoming a dormant hazard.
+                p 
+                  b Show your love by helping support this mission!
+                a.btn[href=pay_what_you_want_path]
+                  | Help us keep 
+                  span[data-role="child_name"] Pablo
+                  |  and thousands of kids safe 
+
+
+
+
+      / .modal-footer
+      /   a.btn.btn-primary[href='#' data-dismiss="modal"] That's awesome! Let's keep going!

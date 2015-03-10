@@ -14,12 +14,12 @@ class ToySearchService
     response = client.item_search(
       query: {
         'Keywords' => key,
-        'SearchIndex' => 'Toys',
+        'SearchIndex' => 'All',
         'ResponseGroup' => 'ItemAttributes,Images',
       },
     ).to_h
 
-    [response['ItemSearchResponse']['Items']['Item']].flatten.collect do |item|
+    [response['ItemSearchResponse']['Items']['Item']].flatten.compact.collect do |item|
       toy_from_vacuum(item)
     end
   end
@@ -30,9 +30,9 @@ class ToySearchService
     Toy.new(
       provider: 'amazon',
       upc: item['ItemAttributes']['UPC'],
-      name: item['ItemAttributes']['Title'],
-      image: item['MediumImage']['URL'],
-      maker: item['ItemAttributes']['Manufacturer'],
+      name: (item['ItemAttributes']['Title'] rescue nil),
+      image: (item['MediumImage']['URL'] rescue nil),
+      maker: (item['ItemAttributes']['Manufacturer'] rescue nil),
       minimum_age_months: (item['ItemAttributes']['ManufacturerMinimumAge']['__content__'].to_i rescue nil),
       maximum_age_months: (item['ItemAttributes']['ManufacturerMaximumAge']['__content__'].to_i rescue nil),
     )

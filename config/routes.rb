@@ -1,10 +1,24 @@
 Rails.application.routes.draw do
+  get 'toys/index'
+
+  get 'alerts/show'
+
   get 'getting-started' => 'onboarding#index'
   get 'dashboard' => 'dashboard#index'
+  get 'pay-what-you-want' => 'payments#new'
+  post 'payments' => 'payments#create'
+  get 'subscription' => 'payments#show'
+  delete 'payments' => 'payments#destroy'
   get 'start' => 'registrations#sign_up'
 
-  resources :children, only: [:create]
-  resources :toys, only: [:create]
+  resources :children, only: [:create] do
+    resources :toys, on: :member
+    resources :alerts, on: :member do
+      post 'setup_demo', on: :collection
+    end
+  end
+
+  resources :alerts, only: [:destroy]
 
   namespace 'api' do
     get 'gender/guess' => 'gender#guess'

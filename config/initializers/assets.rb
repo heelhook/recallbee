@@ -11,6 +11,10 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w(
   landing.css landing.js
   devise.css devise.js
+  alerts.css alerts.js
+  dashboard.css dashboard.js
+  payments.css payments.js
+  toys.css toys.js
   react/theme.js
   *.png *.jpg *.ico
   )

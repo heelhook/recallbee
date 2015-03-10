@@ -1,0 +1,27 @@
+#toys-list {
+  .toy {
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    padding: 10px;
+    float: left;
+    text-align: center;
+
+    img {
+      max-width: 100px;
+      max-height: 100px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .title {
+      font-weight: bold;
+      max-height: 50px;
+      overflow: ellipsis;
+    }
+  }
+
+  .clear { clear: both; }
+}
