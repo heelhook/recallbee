@@ -22,6 +22,10 @@ $ ->
     href = $(e.target).parents('a').attr('href')
     $("#next-actions-flyer .actions .action[href='#{href}'] h4").click()
 
+  $('body').on 'click', '.sidebar a[data-role="new-toy"]', (e) ->
+    $('.child.box:first a[data-role="new-toy"]:first').click()
+    false
+
   $('body').on 'new_toys', '.child.box', (e, toy_count) ->
     child_box = $(e.target)
     if child_box.hasClass('empty')
@@ -67,7 +71,7 @@ update_toy_count = (child_box, toy_count) ->
   toy_count_div.addClass('updating')
   setTimeout =>
     toy_count_div.removeClass('updating')
-  , 5000
+  , 2500
 
 
 show_demo_hint = ->

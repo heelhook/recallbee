@@ -2,8 +2,8 @@ $ ->
   $handler = StripeCheckout.configure
     key: "pk_test_Z1pNsWWw6Ajoe21V1dNkaO41"
     image: "https://stripe.com/img/documentation/checkout/marketplace.png"
-    name: "Help keep kids safe"
-    description: "Cancel at any time."
+    name: "Keeping Kids Safe"
+    description: "Enter your details to continue"
     email: $('#user_email').val()
     panelLabel: "Support Kids' Safety"
     allowRememberMe: false
