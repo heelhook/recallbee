@@ -21,7 +21,7 @@ class ToysController < ApplicationController
   end
 
   def search
-    @toys = ToySearchService.search(params[:q], 'Toys')
+    @toys = ToySearchService.search(params[:q], 'All')
 
     render json: @toys
   end
