@@ -9,12 +9,12 @@ class ToySearchService
     end
   end
 
-  def self.search(key)
+  def self.search(key, index='All')
     client = vacuum
     response = client.item_search(
       query: {
         'Keywords' => key,
-        'SearchIndex' => 'All',
+        'SearchIndex' => index,
         'ResponseGroup' => 'ItemAttributes,Images',
       },
     ).to_h
@@ -27,7 +27,8 @@ class ToySearchService
   private
 
   def self.toy_from_vacuum(item)
-    Toy.new(
+    toy = Toy.find_or_initialize_by(upc: item['ItemAttributes']['UPC'])
+    toy.update_attributes(
       provider: 'amazon',
       upc: item['ItemAttributes']['UPC'],
       name: (item['ItemAttributes']['Title'] rescue nil),
@@ -36,6 +37,7 @@ class ToySearchService
       minimum_age_months: (item['ItemAttributes']['ManufacturerMinimumAge']['__content__'].to_i rescue nil),
       maximum_age_months: (item['ItemAttributes']['ManufacturerMaximumAge']['__content__'].to_i rescue nil),
     )
+    toy
   end
 
   def self.semantics3

@@ -9,7 +9,20 @@
         h4
           | (don't worry, you'll be able to change this later)
 
-        .row.toylist.list.isotope
+        .row.search
+          input#search.col-md-10[type="text" placeholder="Search by toy name, manufacturer of bar code"]
+          a.btn.btn-primary#search-btn[href="#"]
+            span.fa.fa-search
+          p.suggestions
+            | e.g.: 
+            a[href='#'] My Little Pony
+            | , 
+            a[href='#'] Mattel
+            | , 
+            a[href='#'] 045496742508
+
+
+        .row.toylist.list.isotope#suggestions
           - @toy_suggestions.each do |gender, toys|
             - toys.each do |toy|
               = hidden_field_tag "toys[#{toy.id}]", "false"
@@ -17,6 +30,8 @@
                 span.image
                   img[src=toy.image]
                 span.toy-name= toy.name
+
+        .row.toylist.list.isotope#search-results
 
       .modal-footer
         a.btn.btn-outline[href='#' data-dismiss="modal"] Cancel

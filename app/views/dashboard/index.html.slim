@@ -60,7 +60,7 @@
                 = image_tag 'gs-small-talking.png'
                 span.text
                   | Share your resourcefulness
-            li
+            li[class=(current_user.stripe_token.blank? ? '' : 'done')]
               a[href='#show-your-love' data-toggle="modal" data-target='#next-actions-flyer']
                 span.fa.fa-check
                 = image_tag 'gs-small-heart.png'

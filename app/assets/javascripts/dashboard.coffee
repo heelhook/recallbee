@@ -2,7 +2,6 @@
 #= require add_toy_form
 #= require unsafe-toy-flyer
 #= require next-actions
-#= require payments
 
 $ ->
   show_demo_hint()
@@ -57,8 +56,19 @@ activate_demo = (child_box) ->
   return false
 
 update_toy_count = (child_box, toy_count) ->
-  string = if toy_count == 1 then "1 toy" else "#{toy_count} toys"
-  child_box.find('h3 .note span[data-role="count"]').text(string)    
+  toy_count_div = child_box.find('.toy-count')
+  count = child_box.find('span[data-role="toy-count"]')
+  total_count = parseInt(count.data().count) + toy_count
+
+  string = if total_count == 1 then "1 toy" else "#{total_count} toys"
+  count.text(string)    
+  count.attr('data-count', total_count)
+  console.log toy_count_div
+  toy_count_div.addClass('updating')
+  setTimeout =>
+    toy_count_div.removeClass('updating')
+  , 5000
+
 
 show_demo_hint = ->
   setTimeout ->

@@ -1,5 +1,5 @@
 class ToysController < ApplicationController
-  before_filter :load_resources
+  before_filter :load_resources, except: [:search]
 
   def index
     @toys = @child.toys
@@ -18,6 +18,12 @@ class ToysController < ApplicationController
     end
 
     head :no_content
+  end
+
+  def search
+    @toys = ToySearchService.search(params[:q], 'Toys')
+
+    render json: @toys
   end
 
   private

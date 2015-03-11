@@ -3,7 +3,7 @@
     | #{child.name}'s Toys
     .note.toy-count
       | We are tracking 
-      span[data-role="count"]  #{pluralize child.toys.count, 'toy'}
+      span[data-role="toy-count" data-count="#{child.toys.count}"]  #{pluralize child.toys.count, 'toy'}
 
   .box-contents
     .empty
@@ -45,4 +45,4 @@
           |  Add more toys
 
     .buttons.unsafe
-      a.btn.btn-primary[href=child_alerts_path(child)] Read More & Take Action
+      a.btn.btn-warning[href=child_alerts_path(child)] Read More & Take Action

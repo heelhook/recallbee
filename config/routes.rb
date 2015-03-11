@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'toys/index'
-
   get 'alerts/show'
 
   get 'getting-started' => 'onboarding#index'
@@ -10,6 +8,8 @@ Rails.application.routes.draw do
   get 'subscription' => 'payments#show'
   delete 'payments' => 'payments#destroy'
   get 'start' => 'registrations#sign_up'
+
+  post 'toys' => 'toys#search'
 
   resources :children, only: [:create] do
     resources :toys, on: :member

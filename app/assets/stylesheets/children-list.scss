@@ -18,6 +18,12 @@
         margin-top: 15px;
         font-family: $roboto;
         font-weight: 200;
+        transition: all 1s linear 0s;
+
+        &.updating {
+          transform: scale(2);
+          color: #009900;
+        }
       }
     }
 
