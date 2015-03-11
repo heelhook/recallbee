@@ -4,7 +4,6 @@
 ul.nav.navbar-nav.navbar-right
   = active_link_to 'Home', '/'
   = active_link_to 'How It Works', how_it_works_path
-  = active_link_to 'Blog', blog_index_path
-  = active_link_to 'About', '/about'
+  = active_link_to 'Pricing', pay_what_you_want_path
   - if current_user
     = active_link_to 'Dashboard', dashboard_path
