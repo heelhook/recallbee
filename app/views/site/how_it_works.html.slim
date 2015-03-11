@@ -8,9 +8,9 @@ section#how-it-works
 
 
         .page.hidden[data-id="2"]
-          h1.title Becoming a hero starts with you
+          h1.title Let's get started
           h2.subtitle
-            | Let's start setting up protection for one of your children.
+            | Let's set up protection for one of your children.
 
           h2.cta What's the name of your first-born?
 
@@ -47,7 +47,11 @@ section#how-it-works
             | We've compiled a small toy list sample for 
             span[data-role="child_name"] Pablo
 
-          = image_tag 'toy-list.png'
+          .toy-list-container
+            a[href='#' data-role="navigation-next"]= image_tag 'toy-list-boy-safe.png'
+            span.title
+              span[data-role="child_name"] Pablo
+              | 's Toys
 
         .page.hidden[data-id="5"]
           h1.title
@@ -58,11 +62,21 @@ section#how-it-works
             |  toys!
           h2.subtitle
             | ...until one day, 
-            b Toy 2 is recalled!
+            b one of 
+            span[data-role="child_pronoun"] the
+            |  the toys recalled!
             div.note
               | (Just like thousands of toys are recalled every year!)
 
-          = image_tag 'toy-list-recalled.png'
+          .toy-list-container
+            a[href='#' data-role="navigation-next"]= image_tag 'toy-list-boy-unsafe.png'
+            span.title
+              span[data-role="child_name"] Pablo
+              | 's Toys
+            span.description
+              | Some of 
+              span[data-role="child_name"] Pablo
+              | 's toys have safety concerns!
 
         .page.hidden[data-id="7"]
           h1.title

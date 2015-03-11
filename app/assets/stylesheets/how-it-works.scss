@@ -1,13 +1,13 @@
 section#how-it-works {
   background-image: image-url("triangle/coming-soon-bg.png");
-  background-position: center top;
+  background-position: center 90px;
   background-repeat: repeat-x;
-  margin-top: 60px;
 
   h1.title {
-    font-weight: bold;
-    color: #FFA22C;
-    text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 0px;
+    text-shadow: none;
+    color: #404040;
+    font-weight: 300;
+    font-size: 4em;
   }
 
   h2.subtitle {
@@ -70,6 +70,32 @@ section#how-it-works {
 
   a.btn-register {
     margin-top: 20px;
+  }
+
+  .toy-list-container {
+    position: relative;
+    width: 705px;
+    margin: 0px auto;
+
+    span.title {
+      position: absolute;
+      top: 34px;
+      color: #3B88B6;
+      font-size: 22px;
+      font-family: Helvetica Neue, Helvetica;
+      font-weight: 500;
+      left: 20px;
+    }
+
+    span.description {
+      position: absolute;
+      top: 230px;
+      color: #459CE7;
+      font-size: 14px;
+      font-family: Helvetica Neue, Helvetica;
+      font-weight: 500;
+      left: 315px;
+    }
   }
 }
 
