@@ -72,6 +72,11 @@
     a, a:hover { text-decoration: none; }
     a:hover span.text { text-decoration: underline; }
 
+    a[href=""] span, a[href=""]:hover span {
+      color: #aaaaaa;
+      text-decoration: none;
+    }
+
     span.fa.fa-check {
       display: none;
       color: #009900;

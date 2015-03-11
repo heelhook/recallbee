@@ -35,6 +35,13 @@
                   = image_tag 'gs-small-alert.png'
                   span.text
                     | See a sample hazard alert
+            - elsif current_user.toys.any?
+              li
+                a[href='#' data-role="unsafe-demo"]
+                  span.fa.fa-check
+                  = image_tag 'gs-small-alert.png'
+                  span.text
+                    | See a sample hazard alert
             - else
               li
                 a[href='#' data-role="unsafe-demo"]
@@ -43,7 +50,7 @@
                   span.text
                     | See a sample hazard alert
             li[class=(current_user.toys.count > 5 ? 'done' : '')]
-              a[href='#']
+              a[href='#' data-role="new-toy"]
                 span.fa.fa-check
                 = image_tag 'gs-small-toys.png'
                 span.text
