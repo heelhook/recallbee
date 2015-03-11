@@ -7,7 +7,7 @@ class ToyOwnership < ActiveRecord::Base
 
   delegate :parent_id, to: :child, prefix: false
 
-  after_commit :create_alerts
+  after_save :create_alerts
 
   def create_alerts
     if toy.reports.any?
