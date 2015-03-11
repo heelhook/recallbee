@@ -1,6 +1,8 @@
 $ ->
+  stripe_api_public = $('#stripe_key').val()
+
   $handler = StripeCheckout.configure
-    key: "pk_test_Z1pNsWWw6Ajoe21V1dNkaO41"
+    key: stripe_api_public
     image: "https://stripe.com/img/documentation/checkout/marketplace.png"
     name: "Keeping Kids Safe"
     description: "Enter your details to continue"

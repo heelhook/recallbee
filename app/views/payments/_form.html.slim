@@ -1,5 +1,6 @@
 = form_tag do
   = hidden_field_tag 'user_email', current_user.try(:email)
+  = hidden_field_tag 'stripe_key', Rails.application.secrets.stripe_api_public
   <script src="https://checkout.stripe.com/checkout.js"></script>
   p.form
     span I believe 
