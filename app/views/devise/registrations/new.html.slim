@@ -6,12 +6,17 @@ section
     .row.padding
       .col-md-6.col-md-offset-1
         ul
-          li.fa.fa-caret-right
-            b Free. Forever. Yeah, really!
-          li.fa.fa-caret-right No credit card required. Just fill out the form below and you’re in!
-          li.fa.fa-caret-right Always ready to track new toys!
+          li
+            span.fa.fa-caret-right
+            b  Free. Forever. Yeah, really!
+          li
+            span.fa.fa-caret-right
+            |  No credit card required. Just fill in these details and you’re in!
+          li
+            span.fa.fa-caret-right
+            |  Always ready to track new toys!
 
-        .text-right= image_tag 'signup_form.png'
+        =image_tag 'stock/family.jpg', id: 'pres', class: 'col-md-11 col-md-offset-1'
       .col-md-5
         .form
           h2.text-center Quick Social Sign Up
