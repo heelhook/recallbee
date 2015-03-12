@@ -35,11 +35,11 @@ $ ->
     update_child_name()
     update_child_pronoun()
     store_child_name()
-    mixpanel.track('HIW Added Child Name', name: @child_name)
+    mixpanel.track('HIW Added Child Name', name: $('input#child_name').val())
 
   $('.page[data-id="3"]').on 'next', (e) ->
     record_email_address()
-    mixpanel.track('HIW Added Email Address', email: @user_email)
+    mixpanel.track('HIW Added Email Address', email: $('input#email').val())
 
   store_in_volatile_session = (data) ->
     $.ajax
