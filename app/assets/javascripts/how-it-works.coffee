@@ -2,23 +2,44 @@ $ ->
   $('[data-toggle="tooltip"]').tooltip()
 
   $('body').on 'click', '[data-role="navigation-next"]', (e) ->
-    change_page()
+    if current_page_valid()
+      change_page()
     false
+
+  current_page_valid = ->
+    switch $('.page:visible:first').data().id
+      when 2
+        if $('input#child_name').val().length < 3
+          $('input#child_name')
+            .addClass('invalid')
+            .focus()
+          return false
+      when 3
+        unless validate_email $('input#email').val()
+          $('input#email')
+            .addClass('invalid')
+            .focus()
+          return false
+    true
+
+  validate_email = (email) ->
+      re = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)\b/
+      re.test email
 
   $('body').on 'keypress', 'input', (e) ->
     if e.which == 13
-      change_page()
+      $('[data-role="navigation-next"]').click()
       false
 
   $('.page[data-id="2"]').on 'next', (e) ->
     update_child_name()
     update_child_pronoun()
     store_child_name()
-    mixpanel.track('HIW Added Child Name')
+    mixpanel.track('HIW Added Child Name', name: @child_name)
 
   $('.page[data-id="3"]').on 'next', (e) ->
     record_email_address()
-    mixpanel.track('HIW Added Email Address')
+    mixpanel.track('HIW Added Email Address', email: @user_email)
 
   store_in_volatile_session = (data) ->
     $.ajax

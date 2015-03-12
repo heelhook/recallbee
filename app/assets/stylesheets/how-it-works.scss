@@ -46,6 +46,9 @@ section#how-it-works {
     width: 500px;
 
     &.icon { padding: 5px 40px; }
+    &.invalid {
+      border-bottom: solid #cc4422 2px;
+    }
   }
 
   #page-container {
