@@ -1,0 +1,33 @@
+.container
+  .col-md-6.col-md-offset-3
+    .row
+      .logo.col-md-12.text-center
+        = image_tag 'logo.png'
+    .row
+      .col-md-12
+        h1 Log in
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .form-group
+            = f.label :email
+            = f.email_field :email, autofocus: true, class: 'col-md-12 form-control', placeholder: 'Type your email'
+          .form-group
+            = f.label :password
+            = f.password_field :password, autocomplete: "off", class: 'col-md-12 form-control'
+          - if devise_mapping.rememberable?
+            .form-group
+              = f.check_box :remember_me, checked: true
+              span  Remember me
+          .actions.col-md-12.text-center
+            = f.submit "Continue to my children's toyboxes", class: 'btn btn-register'
+          .row
+            .col-md-12.text-center
+              = link_to "Forgot your password?", new_user_password_path
+
+          - resource_class.omniauth_providers.each do |provider|
+            .row.social-buttons
+              p.col-md-12.text-center
+                a.btn.btn-social[class="btn-#{provider.to_s}" href= omniauth_authorize_path(resource_name, provider)]
+                  i.fa[class="fa-#{provider.to_s}"]
+                  = "Login with #{provider.to_s.titleize}"
+
+          .clear

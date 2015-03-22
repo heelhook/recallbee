@@ -48,3 +48,47 @@ body.registrations.new, body.registrations.create {
     padding-right: 2px;
   }
 }
+
+body.sessions.new {
+  header { display: none; }
+
+  .logo {
+    margin-top: 3em;
+    margin-bottom: 2em;
+  }
+
+  form {
+    border: solid #cccccc 1px;
+    padding: 2em;
+    border-radius: 1em;
+    background-color: #f7f7f7;
+
+    .form-group {
+      padding-bottom: 2em;
+    }
+
+    label {
+      font-family: $lato;
+      font-size: 1.5em;
+      line-height: 1.5em;
+    }
+
+    input {
+      font-size: 1.25em;
+    }
+
+    .actions {
+      ul {
+        margin: 0px;
+        padding: 0px;
+      }
+    }
+
+    .social-buttons {
+      border-top: solid #cccccc 1px;
+      padding-top: 1em;
+    }
+  }
+
+  .clear { clear: both; }
+}
