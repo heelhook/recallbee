@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
 
   validates :email, uniqueness: { case_sensitive: false }
 
+  after_create :send_email
+
   def self.create_from_omniauth(params)
     attributes = {
       email: params['info']['email'],
@@ -23,5 +25,9 @@ class User < ActiveRecord::Base
     }
 
     create(attributes)
+  end
+
+  def send_email
+    TransactionMailer.welcome(self).deliver
   end
 end
