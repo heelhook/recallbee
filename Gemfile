@@ -90,3 +90,4 @@ gem 'semantics3'
 gem 'recursive-open-struct'
 
 gem 'stripe'
+gem 'mandrill_mailer'
